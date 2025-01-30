@@ -1,0 +1,150 @@
+.blogContainer {
+  padding: 2rem 0;
+}
+
+.mainContent {
+  max-width: 100%;
+}
+
+.blogTitle {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  color: #111827;
+  font-family: Inter !important;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chip {
+  background-color: #f3f4f6 !important;
+  padding: 5px 20px !important;
+  font-size: 14px !important;
+  height: auto !important;
+  font-family: Inter !important;
+}
+
+.featuredImage {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 3rem !important;
+  height: 3rem !important;
+  margin-right: 1rem;
+}
+
+.authorName {
+  font-weight: 600 !important;
+  color: #111827;
+  font-size: 16px;
+  margin: 0;
+}
+
+.authorRole {
+  color: #6b7280;
+}
+
+.blogContent {
+  font-size: 1.125rem !important;
+  line-height: 1.75 !important;
+  color: #374151;
+  margin-bottom: 1.5rem !important;
+}
+
+.sectionTitle {
+  font-size: 1.875rem !important;
+  font-weight: 700 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #111827;
+}
+
+.blogList {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.blogList li {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  color: #374151;
+}
+
+.sidebar {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.sidebarTitle {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  color: #111827;
+}
+
+.recentPost {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.recentPostImage {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+
+.recentPostTitle {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #111827;
+  margin-bottom: 0.25rem !important;
+}
+
+.recentPostMeta {
+  color: #6b7280;
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blogTitle {
+    font-size: 2rem !important;
+  }
+
+  .blogContent {
+    font-size: 1rem !important;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem !important;
+  }
+
+  .blogList li {
+    font-size: 1rem;
+  }
+
+  .sidebarTitle {
+    font-size: 1.25rem !important;
+  }
+}

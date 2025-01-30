@@ -1,0 +1,257 @@
+.panel-desc-card h3 {
+  font-size: 14px;
+  font-family: 'Inter';
+  border: 0;
+  font-weight: 400;
+  color: #8b8d97;
+}
+.panel-desc-card {
+  box-shadow: 0 4px 18px 0 #9284411a;
+  border: 0;
+  border-radius: 15px;
+}
+
+.balance {
+  background-color: #e6eafc;
+}
+.balance h3 {
+  color: black;
+  font-weight: 700;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-desc-card .semi-card-body {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat h4 {
+  margin-bottom: 7px;
+  line-height: 1;
+}
+
+.stat p {
+  font-family: Poppins;
+  color: #45464e;
+  font-size: 20px;
+}
+.rpm .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.rpm .semi-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.arrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.arrow p {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+.heading span {
+  font-family: Poppins;
+  color: #45464e;
+  font-weight: 700;
+  font-size: 20px;
+}
+.heading h3 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+}
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-head ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+}
+.chart-head ul li {
+  background-color: #80808014;
+  padding: 7px 15px;
+  border-radius: 11px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1c1d22;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.main-card {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.main-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.main-card p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.main-card button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.main-card button img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.summary-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.summary-card h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.summary-card .value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.summary-card .sub-value {
+  font-size: 12px;
+  color: #888;
+}
+.shadow {
+  box-shadow: 0 4px 18px 0 #9284411a;
+}
+
+#recharge-btn {
+  background-color: #6175de;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  border: 0;
+  padding: 9px 14px;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.search-bar {
+  position: relative;
+}
+.search-bar svg {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 8px;
+  width: 20px;
+}
+
+.search-bar input {
+  border: 0;
+  outline: 0;
+  padding: 8px 17px;
+  text-indent: 10px;
+  font-family: Inter;
+  font-size: 16px;
+  border-radius: 12px;
+  background: #fff;
+  text-indent: 18px;
+}
+.b-0 .semi-card {
+  border: 0;
+}
+
+.br-lg .semi-card {
+  border-radius: 16px;
+}
+.search-actions {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+.filter-btn {
+  border: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  font-family: Inter;
+  font-weight: 400;
+  color: #53545c;
+}
+
+.download-btn {
+  background-color: #fff;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+.download-btn img {
+  height: 16px;
+}

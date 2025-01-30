@@ -1,0 +1,244 @@
+.payment-option {
+  display: flex;
+  justify-content: space-between;
+  background: #f0f0f099;
+  padding: 15px 15px;
+  border-radius: 15px;
+  align-items: center;
+  cursor: pointer;
+}
+.payment-option .desc {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #abafb1;
+}
+.payment-option .desc span {
+  color: #007aff;
+  font-weight: bold;
+}
+.payment-option .desc span img {
+  margin-top: 4px;
+}
+.payment-option .desc strong {
+  font-weight: bold;
+  color: #000;
+}
+.payment-options .payment-option:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 25px 15px;
+  position: relative;
+}
+.modal-header h6 {
+  margin: 20px 0;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #8b8d97;
+}
+.modal-header h3 {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+}
+
+.recharge-details {
+  margin-bottom: 20px;
+}
+
+.recharge-details input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-family: Open-sans;
+  font-weight: 700;
+  font-size: 16px;
+}
+.recharge-details label {
+  font-family: Open-sans;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.payment-options {
+  padding-bottom: 23px;
+}
+
+.payment-button {
+  width: 100%;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.payment-button:hover {
+  background: #eaeaea;
+}
+
+.wallet-icons {
+  float: right;
+}
+
+.redeem-code {
+  margin-bottom: 20px;
+}
+
+.redeem-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.redeem-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.get-code {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-code:hover {
+  background: #0056b3;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.cancel-button,
+.redeem-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: #f5f5f5;
+}
+
+.cancel-button:hover {
+  background: #eaeaea;
+}
+
+.redeem-button {
+  background: #007bff;
+  color: white;
+}
+
+.redeem-button:hover {
+  background: #0056b3;
+}
+
+.redeem-code {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 13px;
+  align-items: center;
+  border-top: 2px solid #00000029;
+  padding-top: 22px;
+}
+
+.redeem-code h5 {
+  width: 50%;
+  margin: 0;
+  font-weight: 500;
+  font-family: Inter;
+  font-size: 14px;
+}
+
+.get-redeem {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+  color: #007aff;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.redeem-input-container {
+  width: 100%;
+}
+
+.redeem-input-container input {
+  width: 100%;
+  font-family: Open-sans;
+  border: 2px solid #000;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 13px;
+  padding: 14px 17px;
+}
+.redeem-input-container input:focus {
+  border: 2px solid #000;
+  outline: 0;
+}
+.action-btns .cancel-button {
+  width: 40%;
+  border: 2px solid #000;
+  padding: 12px 0;
+  border-radius: 13px;
+  font-family: Open-sans;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.action-btns .redeem-button {
+  width: 53%;
+  padding: 12px 0;
+  border-radius: 13px;
+  font-family: Open-sans;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6175de;
+}
+
+.action-btns {
+  justify-content: space-between !important;
+  padding: 0 !important;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #fff2e2;
+  padding: 8px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+}

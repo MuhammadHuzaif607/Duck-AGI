@@ -1,0 +1,177 @@
+.panel-desc-card h3 {
+  font-size: 14px;
+  font-family: 'Inter';
+  border: 0;
+  color: #8b8d97;
+  font-weight: 400;
+}
+
+.panel-desc-card {
+  box-shadow: 0 4px 18px 0 #9284411a;
+  border: 0;
+  border-radius: 15px;
+}
+
+.balance h3 {
+  color: black;
+  font-weight: 700;
+}
+.title {
+  padding-bottom: 70px;
+}
+
+.panel-desc-card .semi-card-body {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat h4 {
+  margin-bottom: 7px;
+  line-height: 1;
+}
+
+.stat p {
+  font-family: Poppins;
+  color: #45464e;
+  font-size: 20px;
+}
+.rpm .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.rpm .semi-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.arrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.arrow p {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+.heading span {
+  font-family: Poppins;
+  color: #45464e;
+  font-weight: 700;
+  font-size: 20px;
+}
+.heading h3 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+}
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-head ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+}
+.chart-head ul li {
+  background-color: #80808014;
+  padding: 7px 15px;
+  border-radius: 11px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1c1d22;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.main-card {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.main-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.main-card p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.main-card button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.main-card button img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.summary-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.summary-card h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.summary-card .value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.summary-card .sub-value {
+  font-size: 12px;
+  color: #888;
+}
+.shadow {
+  box-shadow: 0 4px 18px 0 #9284411a;
+}

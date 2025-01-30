@@ -1,0 +1,29 @@
+.drawing-table tbody tr:hover + tr,
+.drawing-table tbody tr:hover {
+  background: #f8f8f8;
+}
+
+.drawing-table tbody tr,
+.drawing-table tbody th,
+.drawing-table thead tr th {
+  font-family: Inter !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.drawing-table tbody tr td,
+.drawing-table tbody tr th {
+  border-bottom: none !important;
+}
+.bulk-actions svg {
+  position: static;
+  transform: none;
+}
+.failure-reason {
+  margin-left: 50px;
+}
+.child-row {
+  font-size: 14px;
+}
+.child_row .blue-text {
+  color: #007aff;
+}

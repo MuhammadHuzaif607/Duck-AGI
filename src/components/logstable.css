@@ -1,0 +1,23 @@
+.logs-data .panel-desc-card .semi-card-body {
+  height: 90px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.logs-data .panel-desc-card.consumption {
+  background-color: #519c66;
+  position: relative;
+}
+.logs-data .panel-desc-card.consumption .line {
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+.logs-data .panel-desc-card.consumption .line img {
+  filter: brightness(0) invert(1);
+}
+.logs-data .panel-desc-card.consumption p {
+  color: #fff;
+}
+.logs-data .panel-desc-card.consumption h3 {
+  color: #fff;
+}

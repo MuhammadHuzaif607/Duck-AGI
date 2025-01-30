@@ -1,0 +1,15 @@
+.chat .semi-chat {
+  max-width: none;
+}
+
+.chat {
+  flex-wrap: wrap;
+}
+
+.chat .semi-layout-content {
+  width: 70%;
+}
+
+.chat .semi-layout-sider {
+  width: 30%;
+}

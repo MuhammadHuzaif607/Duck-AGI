@@ -1,0 +1,26 @@
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-paddingCheckbox.MuiTableCell-sizeMedium.css-mfzv8e-MuiTableCell-root {
+  opacity: 0;
+}
+
+tr.MuiTableRow-root.MuiTableRow-hover.css-6ge3s-MuiTableRow-root:hover
+  td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-paddingCheckbox.MuiTableCell-sizeMedium.css-mfzv8e-MuiTableCell-root {
+  opacity: 1;
+}
+
+.wallet-table tr th,
+td {
+  font-family: Inter !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+.wallet-table tbody tr:hover .bold {
+  transition: all 0.5s;
+}
+.wallet-table tbody tr:hover .bold {
+  font-weight: bold !important;
+  transition: all 0.5s;
+}
+
+.wallet-table tbody tr:hover .trans-id {
+  color: #007aff;
+}

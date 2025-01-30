@@ -1,0 +1,148 @@
+/* Styles for the hero section */
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .dashboard-preview img {
+    width: 100%;
+  }
+}
+
+/* Styles for the model section */
+.model-section h2 {
+  font-size: 120px;
+}
+
+.model-section h2 span {
+  font-size: 60px;
+}
+
+@media (max-width: 960px) {
+  .model-section h2 {
+    font-size: 80px;
+  }
+
+  .model-section h2 span {
+    font-size: 40px;
+  }
+
+  .brand h3 {
+    font-size: 28px;
+  }
+
+  .brand p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .model-section h2 {
+    font-size: 60px;
+  }
+
+  .model-section h2 span {
+    font-size: 30px;
+  }
+
+  .model-actions {
+    flex-direction: column;
+  }
+}
+
+/* Responsive styles for the slider section */
+@media (max-width: 960px) {
+  .slider-item {
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-item {
+    min-height: 250px;
+  }
+}
+
+/* Styles for the support model section */
+@media (max-width: 960px) {
+  .support-model {
+    padding-top: 200px;
+  }
+
+  .support-model .content h3 {
+    font-size: 36px;
+  }
+
+  .support-model .content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .support-model {
+    padding-top: 150px;
+  }
+
+  .support-model .content h3 {
+    font-size: 28px;
+  }
+
+  .support-model .content p {
+    font-size: 16px;
+  }
+}
+
+/* Styles for the guide container */
+@media (max-width: 960px) {
+  .guide-container > div {
+    padding: 30px;
+    margin-top: 80px;
+  }
+
+  .guide-left h4 {
+    font-size: 28px;
+  }
+
+  .guide-left p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  p.guide-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guide-container > div {
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .guide-left h4 {
+    font-size: 24px;
+  }
+
+  .guide-actions {
+    flex-direction: column;
+  }
+}
