@@ -86,9 +86,9 @@ const PageLayout = () => {
           >
             <App />
           </Content>
-          <Layout.Footer>
+          {/* <Layout.Footer>
             <FooterBar />
-          </Layout.Footer>
+          </Layout.Footer> */}
         </Layout>
       </Layout>
       <ToastContainer />
