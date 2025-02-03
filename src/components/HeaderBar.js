@@ -11,6 +11,8 @@ import China from '../../public/china.png';
 import Wallet from '../../public/wallet-blue.png';
 import Notification from '../../public/notification.png';
 import Duck from '../../public/duck.png';
+import { IoMdClose } from 'react-icons/io';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 // import fireworks from 'react-fireworks';
 
@@ -42,6 +44,7 @@ import { stringToColor } from '../helpers/render';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 import { StyleContext } from '../context/Style/index.js';
 import { useLocation } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 const HeaderBar = () => {
   const { t, i18n } = useTranslation();
@@ -173,29 +176,30 @@ const HeaderBar = () => {
     pathname.includes('midjourney') ||
     pathname.includes('task') ||
     pathname.includes('connections') ||
-    pathname.includes('setting');
+    pathname.includes('setting') ||
+    pathname.includes('pricing');
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Row
-        gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}
-        type='flex'
-        align='middle'
-        justify='space-between'
-      >
-        <Col span={6}>
+      <Grid container alignItems='center'>
+        <Grid item xs={6} md={isDashboard ? 6 : 3}>
           {isDashboard ? (
             <h1 className='head-title'>{`${pathname.substring(1)}`}</h1>
           ) : (
             <div class='semi-navigation-header'>
+              <div className='hamburger' onClick={() => setIsOpen(!isOpen)}>
+                <RxHamburgerMenu />
+              </div>
               <i class='semi-navigation-header-logo'>
                 <img src={Duck} alt='logo'></img>
               </i>
               <span class='semi-navigation-header-text'>DUCKAGI</span>
             </div>
           )}
-        </Col>
-        <Col span={12}>
-          {!isDashboard && (
+        </Grid>
+        {!isDashboard && (
+          <Grid item xs={12} md={6} className='hidden-xs'>
             <div className='main-menu'>
               <ul>
                 {items.map((item) => (
@@ -224,9 +228,9 @@ const HeaderBar = () => {
                 ))}
               </ul>
             </div>
-          )}
-        </Col>
-        <Col span={6}>
+          </Grid>
+        )}
+        <Grid item xs={6} md={isDashboard ? 6 : 3}>
           {isDashboard ? (
             <div className='dash-actions'>
               <div className='wallet'>
@@ -235,6 +239,7 @@ const HeaderBar = () => {
               </div>
               <Dropdown
                 position='bottomRight'
+                style={{ width: 'auto' }}
                 render={
                   <Dropdown.Menu>
                     <Dropdown.Item
@@ -335,9 +340,7 @@ const HeaderBar = () => {
                       size='small'
                       color={stringToColor(userState.user.username)}
                       style={{ margin: 4 }}
-                    >
-                      {/* {userState.user.username[0]} */}
-                    </Avatar>
+                    ></Avatar>
                     {styleState.isMobile ? null : (
                       <Text>{userState.user.username}</Text>
                     )}
@@ -384,14 +387,34 @@ const HeaderBar = () => {
                   variant='outlined'
                   className='sec-button'
                   onClick={logout}
+                  style={{ textAlign: 'end' }}
                 >
                   Logout
                 </button>
               )}
             </div>
           )}
-        </Col>
-      </Row>
+        </Grid>
+      </Grid>
+      <div className='responsive-menu' style={{ left: isOpen ? '0' : '-100%' }}>
+        <ul>
+          <li>
+            <a href='#'>Home</a>
+          </li>
+          <li>
+            <a href='#'>Console</a>
+          </li>
+          <li>
+            <a href='#'>Pricing</a>
+          </li>
+          <li>
+            <a href='#'>Home</a>
+          </li>
+        </ul>
+        <div className='close-icon'>
+          <IoMdClose onClick={() => setIsOpen(!isOpen)} />
+        </div>
+      </div>
     </>
   );
 };

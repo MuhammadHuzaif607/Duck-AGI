@@ -1,7 +1,5 @@
 import { Card, Col, Layout, Row, Spin } from '@douyinfe/semi-ui';
 import Code from '../../../public/code.png';
-import Trending from '../../../public/trend.png';
-import Ticket from '../../../public/ticket.png';
 import { IoSearch } from 'react-icons/io5';
 import Download from '../../../public/download.png';
 import Filter from '../../../public/filter.png';
@@ -9,9 +7,11 @@ import { useContext } from 'react';
 import { StyleContext } from '../../context/Style';
 import URLModal from './_components/URLModal';
 import URLTable from './_components/URLtable';
+import { useTranslation } from 'react-i18next';
 
 const Connections = (props) => {
   const [styleState, styleDispatch] = useContext(StyleContext);
+  const { t } = useTranslation();
   return (
     <Layout>
       <Layout.Content>
@@ -30,11 +30,11 @@ const Connections = (props) => {
 
               <div className='stats'>
                 <div className='stat w-1/2'>
-                  <h4>URL Connections</h4>
+                  <h4>{t('网址连接')}</h4>
                   <p> 20</p>
                 </div>
                 <div className='stat w-1/2'>
-                  <h4>Active</h4>
+                  <h4>{t('积极的')}</h4>
                   <div className='detail-stat'>
                     <p> 12</p>
                   </div>
@@ -52,11 +52,11 @@ const Connections = (props) => {
 
               <div className='stats'>
                 <div className='stat w-1/2'>
-                  <h4>Total ROI</h4>
+                  <h4>{t('总投资回报率')}</h4>
                   <p>12,405,00</p>
                 </div>
                 <div className='stat w-1/2'>
-                  <h4>Visits</h4>
+                  <h4>{t('访问量')}</h4>
                   <div className='detail-stat'>
                     <p> 83K</p>
                     <span>+0.00%</span>
@@ -76,15 +76,15 @@ const Connections = (props) => {
           <Col className='search-actions'>
             <form action='' className='search-bar'>
               <IoSearch width={30} height={30} />
-              <input type='text' placeholder='Search Token Name/Key' />
+              <input type='text' placeholder={t('代币名称或键')} />
             </form>
             <button type='button' className='filter-btn'>
               <img src={Filter} alt='' />
-              Filter
+              {t('筛选')}
             </button>
-            {/* <FilterModal /> */}
             <button type='button' className='download-btn'>
               <img src={Download} alt='' />
+              {t('下载')}
             </button>
           </Col>
           <Col>

@@ -354,16 +354,16 @@ const TopUp = () => {
         <Col lg={12}>
           <Card className='panel-desc-card balance'>
             <div className='title'>
-              <h3>Balance Summary</h3>
+              <h3>{t('余额摘要')}</h3>
               <PaymentModal />
             </div>
             <div className='stats'>
               <div className='stat'>
-                <h4>Current Bal</h4>
+                <h4>{t('当前余额')}</h4>
                 <p>$0.00</p>
               </div>
               <div className='stat'>
-                <h4>Spent</h4>
+                <h4>{t('已消耗')}</h4>
                 <p>$0.00</p>
               </div>
             </div>
@@ -373,27 +373,28 @@ const TopUp = () => {
           </Card>
         </Col>
         <Col lg={12}>
-          <Card className='panel-desc-card '>
+          <Card className='panel-desc-card'>
             <div className='title'>
-              <h3>Recharge Summary</h3>
+              <h3>{t('充值摘要')}</h3>
               <div className='arrow'>
-                <p>This Week </p>
+                <p>{t('本周')}</p>
                 <IoIosArrowDown className='ml-2' />
               </div>
             </div>
             <div className='stats'>
               <div className='stat'>
-                <h4>Exhange Bal</h4>
+                <h4>{t('兑换余额')}</h4>
                 <p>$0.00</p>
               </div>
               <div className='stat'>
-                <h4>Total Recharge</h4>
+                <h4>{t('总充值')}</h4>
                 <p>$0.00</p>
               </div>
             </div>
           </Card>
         </Col>
       </Row>
+
       <Row
         gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}
         style={{ marginTop: 20 }}
@@ -402,22 +403,13 @@ const TopUp = () => {
         className='search-bar'
       >
         <Col className='search-actions'>
-          {/* <Form.Input
-            field='keyword'
-            label={t('搜索关键字')}
-            placeholder={t('令牌名称')}
-            value={searchKeyword}
-            loading={searching}
-            onChange={handleKeywordChange}
-          /> */}
-
           <form action='' className='search-bar'>
             <IoSearch width={30} height={30} />
-            <input type='text' placeholder='Search Token Name/Key' />
+            <input type='text' placeholder={t('搜索代币名称/键')} />
           </form>
           <button type='button' className='filter-btn'>
             <img src={Filter} alt='' />
-            Filter
+            {t('筛选')}
           </button>
           <button type='button' className='download-btn'>
             <img src={Download} alt='' />
@@ -427,6 +419,7 @@ const TopUp = () => {
           <PaymentModal />
         </Col>
       </Row>
+
       {/* When No Data */}
       {/*<Row
         gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}

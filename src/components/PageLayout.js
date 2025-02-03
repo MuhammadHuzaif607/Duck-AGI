@@ -68,15 +68,14 @@ const PageLayout = () => {
       style={{
         height: '100vh',
         display: 'flex',
-        flexDirection: 'column',
         background: '#f5f6f8',
       }}
     >
-      <Header>
-        <HeaderBar />
-      </Header>
-      <Layout style={{ flex: 1, overflow: 'hidden' }}>
-        <Sider>{styleState.showSider ? <SiderBar /> : null}</Sider>
+      <Sider>{styleState.showSider ? <SiderBar /> : null}</Sider>
+      <Layout style={{ flex: 1, }}>
+        <Header>
+          <HeaderBar />
+        </Header>
         <Layout>
           <Content
             style={{

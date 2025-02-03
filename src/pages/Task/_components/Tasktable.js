@@ -10,6 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
+import { useTranslation } from 'react-i18next';
 
 function Row(props) {
   const { row } = props;
@@ -139,6 +140,7 @@ const rows = [
 export default function TasksTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const {t} = useTranslation();
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -159,13 +161,13 @@ export default function TasksTable() {
         <Table aria-label='collapsible table' className='drawing-table'>
           <TableHead>
             <TableRow>
-              <TableCell>Submission Date/Time</TableCell>
-              <TableCell align='left'>End Time</TableCell>
-              <TableCell align='left'>Type</TableCell>
-              <TableCell align='left'>Platform</TableCell>
-              <TableCell align='left'>Schedule</TableCell>
-              <TableCell align='left'>Spent Time</TableCell>
-              <TableCell align='left'>Prompt</TableCell>
+              <TableCell>{t('提交日期/时间')}</TableCell>
+              <TableCell align='left'>{t('结束时间')}</TableCell>
+              <TableCell align='left'>{t('类型')}</TableCell>
+              <TableCell align='left'>{t('平台')}</TableCell>
+              <TableCell align='left'>{t('计划')}</TableCell>
+              <TableCell align='left'>{t('花费时间')}</TableCell>
+              <TableCell align='left'>{t('提示')}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

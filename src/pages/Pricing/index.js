@@ -32,7 +32,6 @@ const Pricing = () => {
             <img src={Filter} alt='' />
             Filter
           </button>
-          {/* <FilterModal /> */}
           <button type='button' className='download-btn'>
             <img src={Download} alt='' />
           </button>

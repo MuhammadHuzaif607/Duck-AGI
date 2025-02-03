@@ -13,14 +13,15 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
-import { Spin } from '@douyinfe/semi-ui';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [blogs, setBlogs] = useState([]); // Fetched blogs
   const [filteredBlogs, setFilteredBlogs] = useState([]); // Filtered blogs
   const [loading, setLoading] = useState(true); // Loading state
+  const { t } = useTranslation();
 
   // Fetch blog data from Strapi
   useEffect(() => {
@@ -66,12 +67,12 @@ const Blog = () => {
         <Grid item xs={12} md={4}>
           <Box className='blog-header'>
             <Typography variant='h4' className='blog-title'>
-              Our Blog
+              {t('我们的博客')}
             </Typography>
 
             <TextField
               fullWidth
-              placeholder='Search'
+              placeholder={t('搜索')}
               variant='outlined'
               className='search-field'
               value={searchTerm}
@@ -120,7 +121,7 @@ const Blog = () => {
                 </Grid>
               ))
             ) : (
-              <Typography>No blogs found</Typography>
+              <Typography>{t('没有找到博客')}</Typography>
             )}
           </div>
         </Grid>

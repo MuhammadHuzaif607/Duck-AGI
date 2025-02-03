@@ -22,6 +22,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import './wallet-table.css';
+import { useTranslation } from 'react-i18next';
 
 function createData(
   tranx_type,
@@ -175,43 +176,43 @@ const headCells = [
     id: 'tranx_type',
     numeric: false,
     disablePadding: true,
-    label: 'Tranx Type',
+    label: '交易类型',
   },
   {
     id: 'tranx_id',
     numeric: true,
     disablePadding: false,
-    label: 'Tranx Id',
+    label: '交易ID',
   },
   {
     id: 'status',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: '状态',
   },
   {
     id: 'amount',
     numeric: true,
     disablePadding: false,
-    label: 'Amount',
+    label: '金额',
   },
   {
     id: 'bal',
     numeric: true,
     disablePadding: false,
-    label: 'Balance',
+    label: '余额',
   },
   {
     id: 'method',
     numeric: true,
     disablePadding: false,
-    label: 'Method',
+    label: '方式',
   },
   {
     id: 'trans_date',
     numeric: true,
     disablePadding: false,
-    label: 'Transaction Date',
+    label: '交易日期',
   },
 ];
 
@@ -228,6 +229,7 @@ function EnhancedTableHead(props) {
     onRequestSort(event, property);
   };
 
+  const {t} = useTranslation();
   return (
     <TableHead>
       <TableRow>
@@ -255,7 +257,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
-              {headCell.label}
+              {t(headCell.label)}
               {orderBy === headCell.id ? (
                 <Box component='span' sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}

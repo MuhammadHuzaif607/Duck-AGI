@@ -55,16 +55,16 @@ export default defineConfig({
       },
     },
   },
-  // server: {
-  //   proxy: {
-  //     '/api': {
-  //       target: 'https://nekoapi.com',
-  //       changeOrigin: true,
-  //     },
-  //     '/pg': {
-  //       target: 'http://localhost:3000',
-  //       changeOrigin: true,
-  //     },
-  //   }
-  // },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://nekoapi.com',
+        changeOrigin: true,
+      },
+      '/pg': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    }
+  },
 });

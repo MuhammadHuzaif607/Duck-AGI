@@ -490,19 +490,19 @@ const Detail = (props) => {
               <Col span={styleState.isMobile ? 24 : 9}>
                 <Card className='panel-desc-card balance'>
                   <div className='title'>
-                    <h3>Balance Summary</h3>
+                    <h3>{t('余额摘要')}</h3>
                   </div>
                   <div className='stats'>
                     <div className='stat'>
-                      <h4>Current Bal</h4>
+                      <h4>{t('当前余额')}</h4>
                       <p> {renderQuota(userState?.user?.quota)}</p>
                     </div>
                     <div className='stat'>
-                      <h4>Spent</h4>
+                      <h4>{t('已用余额')}</h4>
                       <p> {renderQuota(userState?.user?.used_quota)}</p>
                     </div>
                     <div className='stat'>
-                      <h4>Requests</h4>
+                      <h4>{t('请求次数')}</h4>
                       <p> {userState.user?.request_count}</p>
                     </div>
                   </div>
@@ -514,19 +514,19 @@ const Detail = (props) => {
               <Col span={styleState.isMobile ? 24 : 8}>
                 <Card className='panel-desc-card '>
                   <div className='title'>
-                    <h3>Statistical Summary</h3>
+                    <h3>{t('统计摘要')}</h3>
                   </div>
                   <div className='stats'>
                     <div className='stat'>
-                      <h4>Qouta</h4>
+                      <h4>{t('配额')}</h4>
                       <p> {renderQuota(consumeQuota)}</p>
                     </div>
                     <div className='stat'>
-                      <h4>Tokens</h4>
+                      <h4>{t('代币')}</h4>
                       <p> {consumeTokens}</p>
                     </div>
                     <div className='stat'>
-                      <h4>Count</h4>
+                      <h4>{t('次数')}</h4>
                       <p> {times}</p>
                     </div>
                   </div>
@@ -536,50 +536,51 @@ const Detail = (props) => {
                 <Card className='panel-desc-card rpm'>
                   <div className='title'>
                     <div className='heading'>
-                      <h3>Average RPM</h3>
+                      <h3>{t('平均RPM')}</h3>
                       <span>0</span>
                     </div>
                     <div className='arrow'>
-                      <p>This Week </p>
+                      <p>{t('本周')}</p>
                       <IoIosArrowDown className='ml-2' />
                     </div>
                   </div>
                   <div className='title'>
                     <div className='heading'>
-                      <h3>Average RPM</h3>
+                      <h3>{t('平均RPM')}</h3>
                       <span>0</span>
                     </div>
                   </div>
                 </Card>
               </Col>
             </Row>
+
             <Card style={{ marginTop: 20 }}>
               {/* <Tabs type='line' defaultActiveKey='1'>
-                <Tabs.TabPane tab={t('消耗分布')} itemKey='1'>
-                  <div style={{ height: 500 }}>
-                    <VChart
-                      spec={spec_line}
-                      option={{ mode: 'desktop-browser' }}
-                    />
-                  </div>
-                </Tabs.TabPane>
-                <Tabs.TabPane tab={t('调用次数分布')} itemKey='2'>
-                  <div style={{ height: 500 }}>
-                    <VChart
-                      spec={spec_pie}
-                      option={{ mode: 'desktop-browser' }}
-                    />
-                  </div>
-                </Tabs.TabPane>
-              </Tabs> */}
+    <Tabs.TabPane tab={t('消耗分布')} itemKey='1'>
+      <div style={{ height: 500 }}>
+        <VChart
+          spec={spec_line}
+          option={{ mode: 'desktop-browser' }}
+        />
+      </div>
+    </Tabs.TabPane>
+    <Tabs.TabPane tab={t('调用次数分布')} itemKey='2'>
+      <div style={{ height: 500 }}>
+        <VChart
+          spec={spec_pie}
+          option={{ mode: 'desktop-browser' }}
+        />
+      </div>
+    </Tabs.TabPane>
+  </Tabs> */}
               <div className='chart-head'>
-                <h3>Model Consumption distribution</h3>
+                <h3>{t('模型消耗分布')}</h3>
                 <ul>
                   <li>
-                    All Tokens <IoIosArrowDown />{' '}
+                    {t('所有代币')} <IoIosArrowDown />{' '}
                   </li>
                   <li>
-                    10 Nov 2024 - 16 Dec 2024 <IoIosArrowDown />{' '}
+                    {t('2024年11月10日 - 2024年12月16日')} <IoIosArrowDown />{' '}
                   </li>
                 </ul>
               </div>
@@ -592,41 +593,39 @@ const Detail = (props) => {
             >
               <Col span={styleState.isMobile ? 24 : 16}>
                 <Card>
-                  <h4>Model Calls Distribution</h4>
-                  <div class='main-card'>
+                  <h4>{t('模型调用分布')}</h4>
+                  <div className='main-card'>
                     <img
                       src='https://img.icons8.com/ios-filled/50/000000/pie-chart.png'
                       alt='Chart Icon'
                     />
-                    <h2>No Data Yet?</h2>
-                    <p>
-                      Add Tokens to start tracking Calls Distribution Metrics.
-                    </p>
+                    <h2>{t('没有数据')}</h2>
+                    <p>{t('添加代币以开始跟踪调用分布指标。')}</p>
                     <button>
                       <img
                         src='https://img.icons8.com/ios-filled/50/ffffff/plus.png'
                         alt='Plus Icon'
                       />
-                      New Token
+                      {t('新增代币')}
                     </button>
                   </div>
                 </Card>
               </Col>
               <Col span={styleState.isMobile ? 24 : 8}>
-                <div class='summary-cards'>
-                  <div class='summary-card shadow'>
-                    <h4>Tokens Summary</h4>
-                    <div class='value'>0</div>
-                    <div class='sub-value'>Tokens</div>
-                    <div class='sub-value'>Requests</div>
+                <div className='summary-cards'>
+                  <div className='summary-card shadow'>
+                    <h4>{t('代币摘要')}</h4>
+                    <div className='value'>0</div>
+                    <div className='sub-value'>{t('代币')}</div>
+                    <div className='sub-value'>{t('请求次数')}</div>
                   </div>
 
-                  <div class='summary-card shadow'>
-                    <h4>Calls Summary</h4>
-                    <div class='value'>0</div>
-                    <div class='sub-value'>No. of Calls</div>
-                    <div class='sub-value'>Success</div>
-                    <div class='sub-value'>Failed</div>
+                  <div className='summary-card shadow'>
+                    <h4>{t('调用摘要')}</h4>
+                    <div className='value'>0</div>
+                    <div className='sub-value'>{t('调用次数')}</div>
+                    <div className='sub-value'>{t('成功')}</div>
+                    <div className='sub-value'>{t('失败')}</div>
                   </div>
                 </div>
               </Col>

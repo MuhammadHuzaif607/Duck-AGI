@@ -53,7 +53,8 @@ export const StyleProvider = ({ children }) => {
         pathname.includes('/home') ||
         pathname.includes('/contact') ||
         pathname.includes('/blog') ||
-        pathname.includes('/about')
+        pathname.includes('/about') ||
+        pathname.includes('/login')
       ) {
         dispatch({ type: 'SET_SIDER', payload: false });
         dispatch({ type: 'SET_INNER_PADDING', payload: false });

@@ -14,6 +14,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
 import Copy from '../../../../public/copy.png';
 import { showSuccess } from '../../../helpers';
+import { useTranslation } from 'react-i18next';
 
 function createData(url, status, clicks, roi, risk_control, last_activity) {
   return {
@@ -90,37 +91,37 @@ const headCells = [
     id: 'url',
     numeric: false,
     disablePadding: true,
-    label: 'URL',
+    label: '网址', // Chinese for 'URL'
   },
   {
     id: 'status',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: '状态', // Chinese for 'Status'
   },
   {
     id: 'clicks',
     numeric: true,
     disablePadding: false,
-    label: 'Clicks',
+    label: '点击次数', // Chinese for 'Clicks'
   },
   {
     id: 'roi',
     numeric: true,
     disablePadding: false,
-    label: 'ROI',
+    label: '投资回报率', // Chinese for 'ROI'
   },
   {
     id: 'risk_control',
     numeric: true,
     disablePadding: false,
-    label: 'Risk Control',
+    label: '风险控制', // Chinese for 'Risk Control'
   },
   {
     id: 'last_activity',
     numeric: true,
     disablePadding: false,
-    label: 'Last Activity',
+    label: '最后活动', // Chinese for 'Last Activity'
   },
 ];
 
@@ -136,6 +137,7 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
+  const {t} = useTranslation();
 
   return (
     <TableHead>
@@ -164,7 +166,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
-              {headCell.label}
+              {t(headCell.label)}
               {orderBy === headCell.id ? (
                 <Box component='span' sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}

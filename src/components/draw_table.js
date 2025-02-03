@@ -10,6 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
+import { useTranslation } from 'react-i18next';
 
 function Row(props) {
   const { row } = props;
@@ -190,19 +191,20 @@ export default function CollapsibleTable() {
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage,
   );
+  const {t} = useTranslation();
   return (
     <Paper>
       <TableContainer>
         <Table aria-label='collapsible table' className='drawing-table'>
           <TableHead>
             <TableRow>
-              <TableCell>Submission Date/Time</TableCell>
-              <TableCell align='left'>Spend Time</TableCell>
-              <TableCell align='left'>Type</TableCell>
-              <TableCell align='left'>Task Id</TableCell>
-              <TableCell align='left'>Schedule</TableCell>
-              <TableCell align='left'>Result</TableCell>
-              <TableCell align='left'>Prompt</TableCell>
+              <TableCell>{t('提交日期/时间')}</TableCell>
+              <TableCell align='left'>{t('花费时间')}</TableCell>
+              <TableCell align='left'>{t('类型')}</TableCell>
+              <TableCell align='left'>{t('任务 ID')}</TableCell>
+              <TableCell align='left'>{t('计划')}</TableCell>
+              <TableCell align='left'>{t('结果')}</TableCell>
+              <TableCell align='left'>{t('提示')}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

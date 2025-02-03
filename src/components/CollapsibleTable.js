@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useTranslation } from 'react-i18next';
 
 function createData(Date, Token, Group, Type, Model, Spent, Prompt) {
   return {
@@ -227,19 +228,20 @@ const rows = [
 ];
 
 export default function CollapsibleTable() {
+  const {t} = useTranslation();
   return (
     <TableContainer component={Paper}>
       <Table aria-label='collapsible table'>
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Date/Time</TableCell>
-            <TableCell align='left'>Tokens</TableCell>
-            <TableCell align='left'>Group</TableCell>
-            <TableCell align='left'>Type</TableCell>
-            <TableCell align='left'>Model</TableCell>
-            <TableCell align='left'>Spent</TableCell>
-            <TableCell align='left'>Prompt</TableCell>
+            <TableCell>{t('日期/时间')}</TableCell>
+            <TableCell align='left'>{t('代币')}</TableCell>
+            <TableCell align='left'>{t('组')}</TableCell>
+            <TableCell align='left'>{t('类型')}</TableCell>
+            <TableCell align='left'>{t('模型')}</TableCell>
+            <TableCell align='left'>{t('已消耗')}</TableCell>
+            <TableCell align='left'>{t('提示')}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

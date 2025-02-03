@@ -14,10 +14,8 @@ import {
   Layout,
   Select,
   Slider,
-  TextArea,
   Typography,
   Button,
-  Highlight,
 } from '@douyinfe/semi-ui';
 import { SSE } from 'sse';
 import { IconSetting } from '@douyinfe/semi-icons';
@@ -383,7 +381,7 @@ const Playground = () => {
           style={{ display: styleState.isMobile ? 'block' : 'initial' }}
         >
           <Card style={commonOuterStyle} className='chat-sidebar'>
-            <h3>Filter</h3>
+            <h3>{t('筛选')}</h3>
             <div className='chat-field'>
               <div>
                 <Typography.Text strong> {t('分组')}：</Typography.Text>
@@ -424,10 +422,10 @@ const Playground = () => {
             </div>
             <div className='chat-field'>
               <div>
-                <Typography.Text strong>MaxTokens：</Typography.Text>
+                <Typography.Text strong>{t('最大代币数')}</Typography.Text>
               </div>
               <Input
-                placeholder='Enter value'
+                placeholder={t('输入值')}
                 name='max_tokens'
                 required
                 autoComplete='new-password'
@@ -439,7 +437,7 @@ const Playground = () => {
             </div>
             <div className='chat-field'>
               <div>
-                <Typography.Text strong>Temperature：</Typography.Text>
+                <Typography.Text strong>{t('温度')}</Typography.Text>
               </div>
               <Slider
                 step={0.1}

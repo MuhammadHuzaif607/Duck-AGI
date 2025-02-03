@@ -101,3 +101,7 @@
 .chat-sidebar.semi-card {
   height: 100%;
 }
+.semi-navigation-footer-collapsed .semi-navigation-item-text {
+  transition: opacity 0.2s cubic-bezier(0.5, -0.1, 1, 0.4);
+  display: none;
+}

@@ -10,25 +10,41 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
+import Checkbox from '@mui/material/Checkbox'; // Import the Checkbox component
 import Tick from '../images/verify-tick.png';
 
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+  const [checked, setChecked] = React.useState(false); // State for checkbox
+
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   return (
     <>
       <TableRow
-        sx={{ '& > *': { borderBottom: 'unset' } }}
+        sx={{
+          '& > *': { borderBottom: 'unset' },
+          backgroundColor: checked ? 'rgba(0, 0, 255, 0.1)' : 'inherit',
+        }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
         <TableCell component='th' scope='row'>
-          {row.available ? (
-            <img src={Tick} alt='tick' />
-          ) : (
-            <img src='' alt='cross' />
-          )}
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Checkbox
+              checked={checked}
+              onChange={handleCheckboxChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            {row.available ? (
+              <img src={Tick} alt='tick' />
+            ) : (
+              <img src='' alt='cross' />
+            )}
+          </div>
         </TableCell>
         <TableCell align='left'>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -101,7 +117,7 @@ function Row(props) {
                 <span className='failure-reason'>
                   Model Price{' '}
                   <strong>
-                    Prompt $0.5 / 1M tokens | Completion $1.5 / 1M tokens
+                    Prompt $0.5 / 1M tokens | Completion $1.5 / 1M tokens
                   </strong>
                 </span>
               </p>
@@ -129,58 +145,57 @@ Row.propTypes = {
 const rows = [
   {
     id: 1,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo',
     available: true,
-
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 2,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-0125',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 3,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-0613',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 4,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-1106',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 5,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-16k',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 6,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-16k-0613',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 7,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gpt-3.5-turbo-instruct',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
   {
     id: 8,
     available: true,
-    model: 'gto-3.5-turbo',
+    model: 'gto-4',
     billingType: 'pay-as-you-go',
     groups: ['default', 'token-billing'],
   },
@@ -203,6 +218,7 @@ export default function PricingTable() {
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage,
   );
+
   return (
     <Paper>
       <TableContainer>
@@ -216,9 +232,14 @@ export default function PricingTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row, index) => (
-              <Row key={index} row={row} />
-            ))}
+            {currentPageRows.map(
+              (
+                row,
+                index, // Use currentPageRows instead of rows
+              ) => (
+                <Row key={index} row={row} />
+              ),
+            )}
           </TableBody>
         </Table>
       </TableContainer>

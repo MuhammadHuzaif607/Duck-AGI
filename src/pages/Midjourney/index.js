@@ -5,40 +5,45 @@ import Download from '../../../public/download.png';
 import Filter from '../../../public/filter.png';
 import { FaChevronDown } from 'react-icons/fa';
 import './midjourney.css';
+import { useTranslation } from 'react-i18next';
 
-const Midjourney = () => (
-  <>
-    <Row
-      gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}
-      style={{ marginTop: 20 }}
-      type='flex'
-      justify='space-between'
-      className='search-bar'
-    >
-      <Col className='search-actions'>
-        <form action='' className='search-bar'>
-          <IoSearch width={30} height={30} />
-          <input type='text' placeholder='Search Token Name/Key' />
-        </form>
-      </Col>
-      <Col>
-        <div className='search-actions'>
-          <button type='button' className='filter-btn'>
-            <img src={Filter} alt='' />
-            Filter
-          </button>
-          <button type='button' className='download-btn'>
-            <img src={Download} alt='' />
-          </button>
-          <button type='button' className='filter-btn bulk-actions'>
-            Bulk Actions
-            <FaChevronDown />
-          </button>
-        </div>
-      </Col>
-    </Row>
-    <CollapsibleTable />
-  </>
-);
+const Midjourney = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Row
+        gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}
+        style={{ marginTop: 20 }}
+        type='flex'
+        justify='space-between'
+        className='search-bar'
+      >
+        <Col className='search-actions'>
+          <form action='' className='search-bar'>
+            <IoSearch width={30} height={30} />
+            <input type='text' placeholder={t('搜索代币名称/键')} />
+          </form>
+        </Col>
+        <Col>
+          <div className='search-actions'>
+            <button type='button' className='filter-btn'>
+              <img src={Filter} alt='' />
+              {t('筛选')}
+            </button>
+            <button type='button' className='download-btn'>
+              <img src={Download} alt='' />
+              {t('下载')}
+            </button>
+            <button type='button' className='filter-btn bulk-actions'>
+              {t('批量操作')}
+              <FaChevronDown />
+            </button>
+          </div>
+        </Col>
+      </Row>
+      <CollapsibleTable />
+    </>
+  );
+};
 
 export default Midjourney;

@@ -25,6 +25,22 @@
   .dashboard-preview img {
     width: 100%;
   }
+  .semi-col-12.hidden {
+    display: none;
+  }
+  .hidden-xs{
+    display: none;
+  }
+  .hamburger{
+    display: block;
+  }
+  .access-button button {
+    padding: 14px 20px !important;
+    font-size: 16px;
+  }
+  .access-button {
+    margin-top: 20px;
+  }
 }
 
 /* Styles for the model section */

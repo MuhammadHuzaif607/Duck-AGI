@@ -8,19 +8,17 @@ import {
   Button,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 const faqData = [
   {
-    question: 'What is the transit API? Why should I use the transit API?',
+    question: t('什么是交通 API？为什么应该使用中转 API？'),
     answer:
-      "First of all, if you use GPT-4, the use GPT-4 is not your daily system. I am OpenAI's GPT-3 model. The reason for this is that the training data of GPT-4 that OpenAI opens to API calls was before December 2021. After the system was trained, it is not possible that the knowledge base will not be updated. Therefore, if you want to use GPT-4 to get the latest information, the information obtained through the transit must be wrong.",
+      t('首先，如果你使用GPT-4，那么使用GPT-4并不是你日常使用的系统。我是OpenAI的GPT-3模型。原因是OpenAI开放给API调用的GPT-4的训练数据是2021年12月之前的，系统训练完后，知识库不更新是不可能的。因此，如果想要使用GPT-4来获取最新的信息，那么通过中转获取到的信息一定是错误的。'),
   },
   {
-    question: "Why can ChatGPT Plus's GPT-4 answer that it is GPT-4?",
-    answer: 'Detailed answer about ChatGPT Plus and GPT-4...',
-  },
-  {
-    question: 'How do I determine whether it is GPT-4 model?',
+    question: t('如何判断是否是GPT-4型号？'),
     answer: 'Information about determining GPT-4 model...',
   },
   {
@@ -35,11 +33,12 @@ const faqData = [
 ];
 
 const FAQ = () => {
+  const {t} = useTranslation();
   return (
     <section className='faq-section'>
       <Container maxWidth='lg' className='faq-container'>
         <Typography variant='h4' className='faq-title'>
-          Frequently Asked Questions
+        {t('常见问题')}
         </Typography>
 
         <div className='faq-list'>
@@ -58,7 +57,7 @@ const FAQ = () => {
           ))}
         </div>
 
-        <button className='sec-button'>See more</button>
+        <button className='sec-button'>{t('查看更多')}</button>
       </Container>
     </section>
   );

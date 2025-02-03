@@ -1,5 +1,5 @@
 import { useTokenKeys } from '../../components/fetchTokenKeys';
-import {  Layout } from '@douyinfe/semi-ui';
+import { Layout } from '@douyinfe/semi-ui';
 import { useParams } from 'react-router-dom';
 import Image from './public/Image.png';
 import Send from './public/send.png';
@@ -7,8 +7,8 @@ import Key from './public/keys.png';
 import Edit from './public/Edit.png';
 import Delete from './public/Delete.png';
 import Chat_gpt from './public/chat_gpt.png';
-import {useState} from 'react';
-
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ChatPage = () => {
   const { id } = useParams();
@@ -41,6 +41,7 @@ const ChatPage = () => {
   };
 
   const iframeSrc = keys.length > 0 ? comLink(keys[0]) : '';
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -55,10 +56,10 @@ const ChatPage = () => {
             </h1>
           </div>
           <p>
-            Hello <span>Samuele</span>,Let me know how I can be of your help
+            {t('你好')} <span>Samuele</span>,{t('让我知道如何为您提供帮助')}
           </p>
           <div className='chat-field'>
-            <input type='text' placeholder='Your message' />
+            <input type='text' placeholder={t('您的留言')} />
             <button className='add-image' type='button'>
               <img src={Image} alt='image' />
             </button>

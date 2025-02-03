@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { API, showError } from '../../helpers';
-import { marked } from 'marked';
-import { Layout } from '@douyinfe/semi-ui';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import DashboardImage from './images/about-1.png';
 import InnovationImage from './images/about-2.png';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <div className='hero-container'>
       {/* First Section */}
       <Container maxWidth='lg'>
-        <Grid container spacing={4} className='hero-section'>
+        <Grid
+          container
+          spacing={4}
+          className='hero-section'
+          justifyContent='space-between'
+        >
           <Grid xs={12} md={6} className='content-left'>
             <div className='about-sec'>
               <Typography variant='h1'>
-                We are Duck <span>AGI</span>
+                {t('我们是鸭子')} <span>AGI</span>
               </Typography>
               <Typography variant='body1'>
-                At DuckAGI, we strive to harness the power of artificial
-                intelligence to simplify complex processes and make the
-                impossible possible. Our mission is to create cutting-edge AGI
-                technologies and breakthrough solutions that seamlessly
-                integrate with everyday life, empowering individuals and
-                businesses to achieve more with less effort.
+                {t(
+                  '在 DuckAGI，我们努力利用人工智能的力量来简化复杂的流程，让不可能成为可能。我们的使命是创造与日常生活无缝集成的尖端 AGI 技术和突破性解决方案，使个人和企业能够事半功倍。',
+                )}
               </Typography>
               <div className='button-group'>
-                <button className='btn'>Create an account</button>
-                <button className='sec-button'>See Pricing</button>
+                <button className='btn'>{t('创建一个帐户')}</button>
+                <button className='sec-button'>{t('查看定价')}</button>
               </div>
             </div>
           </Grid>
@@ -36,9 +36,7 @@ const About = () => {
             <img src={DashboardImage} alt='Dashboard' className='hero-image' />
           </Grid>
         </Grid>
-
-        {/* Second Section */}
-        <Grid container spacing={4} className='hero-section reverse'>
+        <Grid container spacing={4} className='hero-section reverse' justifyContent='space-between'>
           <Grid xs={12} md={6} className='image-container'>
             <img
               src={InnovationImage}
@@ -49,24 +47,21 @@ const About = () => {
           <Grid xs={12} md={6} className='content-right'>
             <div className='about-sec'>
               <Typography variant='h2'>
-                Driven by Innovation & AI Data
+                {t('由创新和人工智能数据驱动')}
               </Typography>
               <Typography variant='body1' className='hero-description'>
-                We are driven by innovation, guided by a commitment to ethical
-                AI, and inspired by the transformative potential of technology.
-                DuckAGI's platform is designed to be intuitive, adaptive, and
-                reliable, addressing diverse needs across industries with
-                precision and efficiency.
+                {t(
+                  '我们以创新为动力，以对人工智能道德的承诺为指导，并受到技术变革潜力的启发。 DuckAGI 的平台设计直观、适应性强且可靠，能够精确、高效地满足各行业的多样化需求。',
+                )}
               </Typography>
               <Typography variant='body1' className='hero-description'>
-                Whether you're automating workflows, optimizing decision-making,
-                or exploring new frontiers of creativity, DuckAGI is here to
-                support your journey. Together, we're shaping a smarter, more
-                connected future.
+                {t(
+                  '无论您是要实现工作流程自动化、优化决策制定，还是探索创造力的新领域，DuckAGI 都能为您的旅程提供支持。我们正在共同塑造一个更智能、更互联的未来',
+                )}
               </Typography>
               <div className='button-group'>
-                <button className='sec-button'>See Pricing</button>
-                <button className='btn'>Create an account</button>
+                <button className='sec-button'>{t('查看定价')}</button>
+                <button className='btn'>{t('创建一个帐户')}</button>
               </div>
             </div>
           </Grid>

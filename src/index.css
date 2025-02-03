@@ -80,6 +80,46 @@ header .sec-button {
 .semi-descriptions-double-small .semi-descriptions-item {
   padding-right: 30px;
 }
+.hamburger {
+  display: none;
+  padding-right: 15px;
+}
+.hamburger svg {
+  width: 36px;
+  height: 36px;
+}
+.responsive-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #b26ce8, #6175de);
+  text-align: center;
+  z-index: 100;
+  transition: all 0.5s;
+}
+.responsive-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.responsive-menu ul li a {
+  color: #fff;
+  font-size: 18px;
+}
+.close-icon svg {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+}
 
 @media only screen and (max-width: 767px) {
   /*.semi-navigation-sub-wrap .semi-navigation-sub-title, .semi-navigation-item {*/
@@ -262,6 +302,9 @@ code {
   font-weight: 600;
   font-size: 16px;
 }
+.wallet + .semi-navigation-item {
+  width: auto;
+}
 .notif {
   margin: 0 14px;
 }
@@ -275,6 +318,9 @@ code {
   right: 30px;
 }
 /* Contact page css */
+.semi-layout{
+  position: relative;
+}
 .contact-header {
   margin-bottom: 32px;
 }
@@ -390,11 +436,27 @@ code {
   border: none;
 }
 
+.contact-sec .announcement{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #E9E9E9;
+  color: #000000;
+  font-size: 16px;
+  text-align: left;
+}
+.contact-sec .announcement p{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* Responsive styles */
 @media (max-width: 600px) {
   .contact-container {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin: 0;
+    border-radius: 0;
   }
 
   .form-paper {
@@ -407,6 +469,7 @@ code {
 
   .contact-section {
     margin-bottom: 24px;
+    margin-right: 0;
   }
 }
 /* Blog Page css  */
@@ -922,7 +985,7 @@ code {
   margin-bottom: -220px;
 }
 .announcement {
-  position: fixed;
+  position: sticky;
   background: rgba(79, 70, 229, 0.1);
   color: #4f46e5;
   font-size: 16px;
@@ -998,6 +1061,7 @@ code {
 .dash-actions {
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 @media (max-width: 768px) {
   .content h1 {
@@ -1144,7 +1208,7 @@ code {
 /* Responsive styles */
 @media (max-width: 600px) {
   .faq-container {
-    padding: 40px 16px;
+    padding: 40px 16px !important;
   }
   .faq-title {
     font-size: 24px !important;
@@ -1155,6 +1219,9 @@ code {
   }
   .faq-details {
     padding: 0 16px 16px !important;
+  }
+  .faq-section .sec-button {
+    padding: 12px 40px !important;
   }
 }
 .access-button {
@@ -1213,6 +1280,14 @@ code {
   }
   .tutorial-title {
     padding-right: 32px;
+    font-size: 22px;
+    margin-bottom: 18px !important;
+  }
+  .tutorial-steps h6 {
+    font-size: 18px;
+  }
+  .contact-container p {
+    font-size: 16px;
   }
 }
 .slider-container {
@@ -1411,4 +1486,20 @@ p.guide-description {
 
 .blog-content p {
   font-size: 16px;
+}
+/* Settings page */
+.p-0 .MuiBox-root {
+  padding: 0;
+}
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:40px ;
+  justify-content: space-between;
+}
+.user-img{
+  width: 35%;
+}
+.user-info form{
+  width: 60%;
 }

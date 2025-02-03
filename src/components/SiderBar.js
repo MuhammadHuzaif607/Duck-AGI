@@ -69,7 +69,7 @@ const SiderBar = () => {
   const headerButtons = useMemo(
     () => [
       {
-        text: 'Playground',
+        text: t('操场'),
         itemKey: 'playground',
         to: '/playground',
         icon: (
@@ -94,7 +94,7 @@ const SiderBar = () => {
         icon: <img src={Chat} alt='Chat' style={{ width: 20, height: 20 }} />,
       },
       {
-        text: t('Token '), // Added new menu item
+        text: t('代币 '),
         itemKey: 'token',
         to: '/token',
         icon: (
@@ -178,9 +178,9 @@ const SiderBar = () => {
             : 'tableHiddle',
       },
       {
-        text: t('URL connections'),
-        itemKey: 'connections', // Change from 'URL connections' to 'connections'
-        to: '/connections', // Matches the routerMap
+        text: t('网址连接'),
+        itemKey: 'connections',
+        to: '/connections',
         icon: (
           <img
             src={Globe}
@@ -305,27 +305,30 @@ const SiderBar = () => {
           }}
         >
           <Nav.Footer>
-            <a href='/setting' style={{ textDecoration: 'none' }}>
-              <li
-                role='menuitem'
-                tabindex='0'
-                aria-disabled='false'
-                class='semi-navigation-item-normal semi-navigation-item semi-navigation-item-selected semi-navigation-item-collapsed'
-                aria-describedby='iyguix3'
-                data-popupid='iyguix3'
-              >
-                <i
-                  class='semi-navigation-item-icon semi-navigation-item-icon-info'
-                  style={{ marginRight: '0px', opacity: 1 }}
+            <ul className='semi-navigation-list'>
+              <Link style={{ textDecoration: 'none' }} to='settings'>
+                <li
+                  role='menuitem'
+                  tabindex='0'
+                  aria-disabled='false'
+                  class='semi-navigation-item-normal semi-navigation-item semi-navigation-item-selected semi-navigation-item-collapsed'
+                  aria-describedby='iyguix3'
+                  data-popupid='iyguix3'
                 >
-                  <img
-                    src={Setting}
-                    alt='Setting'
-                    style={{ width: 20, height: 20 }}
-                  />
-                </i>
-              </li>
-            </a>
+                  <i
+                    class='semi-navigation-item-icon semi-navigation-item-icon-info'
+                    style={{ marginRight: '0px', opacity: 1 }}
+                  >
+                    <img
+                      src={Setting}
+                      alt='Setting'
+                      style={{ width: 20, height: 20 }}
+                    />
+                  </i>
+                  <span class='semi-navigation-item-text'>Setting</span>
+                </li>
+              </Link>
+            </ul>
           </Nav.Footer>
         </Nav>
       </div>

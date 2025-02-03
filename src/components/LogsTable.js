@@ -719,17 +719,6 @@ const LogsTable = () => {
     <>
       <Layout>
         <Header>
-          {/* <Space>
-              <Tag color='green' size='large' style={{ padding: 15 }}>
-                {t('总消耗额度')}: {renderQuota(stat.quota)}
-              </Tag>
-              <Tag color='blue' size='large' style={{ padding: 15 }}>
-                RPM: {stat.rpm}
-              </Tag>
-              <Tag color='purple' size='large' style={{ padding: 15 }}>
-                TPM: {stat.tpm}
-              </Tag>
-            </Space> */}
           <Row
             gutter={{ xs: 16, sm: 16, md: 16, lg: 24, xl: 24, xxl: 24 }}
             style={{ marginTop: 20 }}
@@ -738,7 +727,7 @@ const LogsTable = () => {
             <Col lg={8} style={{ marginBottom: 16 }}>
               <Card className='panel-desc-card consumption'>
                 <div className='title'>
-                  <h3>{t('Total Consumption')}</h3>
+                  <h3>{t('总消费')}</h3>
                 </div>
                 <div className='stats'>
                   <div className='stat'>
@@ -752,9 +741,9 @@ const LogsTable = () => {
               </Card>
             </Col>
             <Col lg={8} style={{ marginBottom: 16 }}>
-              <Card className='panel-desc-card '>
+              <Card className='panel-desc-card'>
                 <div className='title'>
-                  <h3>{t('RPM')}</h3>
+                  <h3>{t('转速')}</h3>
                 </div>
                 <div className='stats'>
                   <div className='stat'>
@@ -765,9 +754,9 @@ const LogsTable = () => {
               </Card>
             </Col>
             <Col lg={8} style={{ marginBottom: 16 }}>
-              <Card className='panel-desc-card '>
+              <Card className='panel-desc-card'>
                 <div className='title'>
-                  <h3>{t('TPM')}</h3>
+                  <h3>{t('全员生产管理')}</h3>
                 </div>
                 <div className='stats'>
                   <div className='stat'>

@@ -68,11 +68,19 @@ function App() {
             </Suspense>
           }
         />
-        <Route
+        {/* <Route
           path='/channel'
           element={
             <PrivateRoute>
               <Channel />
+            </PrivateRoute>
+          }
+        /> */}
+        <Route
+          path='/settings'
+          element={
+            <PrivateRoute>
+              <Setting />
             </PrivateRoute>
           }
         />
@@ -84,29 +92,29 @@ function App() {
               </Suspense>
           }
         />
-        <Route
+        {/* <Route
           path='/channel/edit/:id'
           element={
             <Suspense fallback={<Loading></Loading>}>
               <EditChannel />
             </Suspense>
           }
-        />
-        <Route
+        /> */}
+        {/* <Route
           path='/channel/add'
           element={
             <Suspense fallback={<Loading></Loading>}>
               <EditChannel />
             </Suspense>
           }
-        />
+        /> */}
         <Route
           path='/playground'
           element={
               <Playground />
           }
         />
-        <Route
+        {/* <Route
           path='/redemption'
           element={
            
@@ -142,7 +150,7 @@ function App() {
               <PasswordResetConfirm />
             </Suspense>
           }
-        />
+        /> */}
         <Route
           path='/login'
           element={
@@ -255,7 +263,7 @@ function App() {
             </Suspense>
           }
         />
-        {/* 方便使用chat2link直接跳转聊天... */}
+        {/* 方便使用chat2link直接跳转聊天...
         <Route
           path='/chat2link'
           element={
@@ -266,6 +274,7 @@ function App() {
             </PrivateRoute>
           }
         />
+         */}
         <Route
           path='/token'
           element={

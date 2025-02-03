@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -69,6 +69,8 @@ const rows = [
   ),
 ];
 
+
+
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -90,39 +92,40 @@ const headCells = [
     id: 'token_name',
     numeric: false,
     disablePadding: true,
-    label: 'Token Name',
+    label: '代币名称', // Token Name
   },
   {
     id: 'status',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: '状态', // Status
   },
   {
     id: 'qouta_used',
     numeric: true,
     disablePadding: false,
-    label: 'Qouta Used',
+    label: '已用配额', // Qouta Used
   },
   {
     id: 'qouta_bal',
     numeric: true,
     disablePadding: false,
-    label: 'Qouta Balance',
+    label: '配额余额', // Qouta Balance
   },
   {
     id: 'created',
     numeric: true,
     disablePadding: false,
-    label: 'Created',
+    label: '创建日期', // Created
   },
   {
     id: 'expiration',
     numeric: true,
     disablePadding: false,
-    label: 'Expiration',
+    label: '到期日期', // Expiration
   },
 ];
+
 
 function EnhancedTableHead(props) {
   const {
@@ -136,6 +139,8 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
+
+  const {t} = useTranslation();
 
   return (
     <TableHead>
@@ -164,7 +169,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
-              {headCell.label}
+              {t(headCell.label)}
               {orderBy === headCell.id ? (
                 <Box component='span' sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}

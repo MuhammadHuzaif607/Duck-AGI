@@ -118,28 +118,27 @@ const Home = () => {
     <>
       <div className='home'>
         <div className='announcement'>
-          The latest OpenAI AI model, {`{a1-d8}`} (upgraded version) and{' '}
-          {`{r1}`}
-          -pro-all (S200-package), now supports image recognition as of 12/07
+          {t(
+            '截至12/07，最新的OpenAI AI模型{a1-d8}（升级版）和{r1}-pro-all（S200-package）现已支持图像识别',
+          )}
         </div>
         <section className='hero'>
           <div className='content'>
             <h1>
-              Data simplified with Singapore <br /> Duck
+              {t('新加坡简化数据')} <br /> Duck
               <span>AGI</span>
             </h1>
 
             <p>
-              Transform complex data into actionable insights with the seamless
-              and intelligent solutions of Singapore DuckAG
+             {t('借助 Singapore DuckAG 的无缝智能解决方案，将复杂数据转化为可行的见解')}
             </p>
 
             <div className='actions'>
               <button variant='contained' className='btn'>
-                Create an account
+                {t('创建一个帐户')}
               </button>
               <button variant='outlined' className='sec-button'>
-                See Pricing
+                {t('查看定价')}
               </button>
             </div>
 
@@ -169,7 +168,7 @@ const Home = () => {
               </Grid>
               <Grid xs={12} md={5}>
                 <div className='brand'>
-                  <Typography variant='h3'>API Aggregation Brand</Typography>
+                  <Typography variant='h3'>API </Typography>
                   <Typography variant='body1'>
                     We are committed to the achievement of providing a highly
                     stable enterprise-level 2000Mbps bandwidth service. It
@@ -358,17 +357,16 @@ const Home = () => {
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
                 <Box className='contact-header'>
-                  <h4>Access Tutorial</h4>
+                  <h4>{t('访问教程')}</h4>
                   <Typography variant='body1'>
-                    CC and DDOS protection are enabled by default. For high
-                    concurrent users (more than 1,000 times per second), please
-                    contact us in advance to add them to the whitelist,
-                    otherwise you may not be able to access or request
+                    {t(
+                      '默认情况下启用 CC 和 DDOS 保护。对于高并发用户（每秒超过1000次），请提前联系我们将其添加到白名单中，否则您可能无法访问或请求',
+                    )}
                   </Typography>
                 </Box>
                 <Box className='contact-section'>
                   <Typography variant='subtitle1'>
-                    Main station interface address
+                    {t('主站接口地址')}
                   </Typography>
                   <ul>
                     <li>
@@ -395,7 +393,9 @@ const Home = () => {
                   </ul>
                 </Box>
                 <div className='access-button'>
-                  <button className='sec-button'>Mid Journey Access</button>
+                  <button className='sec-button'>
+                    Mid Journey {t('使用权')}
+                  </button>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} className='tutorial-container'>
@@ -405,7 +405,7 @@ const Home = () => {
                   </Typography>
 
                   <Box className='tutorial-steps'>
-                    <Typography variant='h6'>Method 1</Typography>
+                    <Typography variant='h6'>{t('方法一')}</Typography>
                     <Box className='code-block'>
                       <Typography>
                         import openai openai.api_base =
@@ -414,14 +414,13 @@ const Home = () => {
                     </Box>
 
                     <Typography variant='h6'>
-                      Method 2 (use this if method1 doesn't work)
+                      {t('方法2（如果方法1不起作用，则使用此方法）')}
                     </Typography>
-                    <Typography>Modify the environment variable</Typography>
+                    <Typography>{t('修改环境变量')}</Typography>
                     <Typography>
-                      OPENAI_API_BASE. Please search for how to change the
-                      environment variables for each system. If the modification
-                      of the environment variables does not work, please restart
-                      the system.
+                      {t(
+                        'OPENAI_API_BASE。请搜索如何更改每个系统的环境变量。如果修改环境变量不起作用，请重新启动系统。',
+                      )}
                     </Typography>
 
                     <Typography>OPENAI_API_BASE = </Typography>
@@ -430,9 +429,7 @@ const Home = () => {
                     </Box>
 
                     <Box className='link-text'>
-                      <Typography>
-                        Click to view access documentation
-                      </Typography>
+                      <Typography>{t('点击查看接入文档')}</Typography>
                     </Box>
                   </Box>
 

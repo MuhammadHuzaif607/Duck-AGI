@@ -447,7 +447,7 @@ const TokenExample = (props) => {
                       <img src={Code} alt='Code' />
                     </div>
                     <div className='arrow'>
-                      <p>This Week </p>
+                      <p>{t('本星期')}</p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -465,11 +465,11 @@ const TokenExample = (props) => {
 
                   <div className='stats'>
                     <div className='stat w-1/2'>
-                      <h4>All Tokens</h4>
+                      <h4>{t('所有代币')}</h4>
                       <p> {renderQuota(userState?.user?.quota)}</p>
                     </div>
                     <div className='stat w-1/2'>
-                      <h4>Active</h4>
+                      <h4>{t('积极的')}</h4>
                       <div className='detail-stat'>
                         <p> {renderQuota(userState?.user?.used_quota)}</p>
                         <span>+0.00%</span>
@@ -489,7 +489,7 @@ const TokenExample = (props) => {
                       <img src={Trending} alt='Trending' />
                     </div>
                     <div className='arrow'>
-                      <p>This Week </p>
+                      <p>{t('本星期')}</p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -506,15 +506,15 @@ const TokenExample = (props) => {
                   </div>
                   <div className='stats'>
                     <div className='stat w-1/3'>
-                      <h4>No. of Calls</h4>
+                      <h4>{t('通话次数')}</h4>
                       <p> {renderQuota(consumeQuota)}</p>
                     </div>
                     <div className='stat w-1/3'>
-                      <h4>Success</h4>
+                      <h4>{t('成功')}</h4>
                       <p> {consumeTokens}</p>
                     </div>
                     <div className='stat w-1/3'>
-                      <h4>Failed</h4>
+                      <h4>{t('失败')}</h4>
                       <div className='detail-stat'>
                         <p> {times}</p>
                         <span>+0.00%</span>
@@ -530,7 +530,7 @@ const TokenExample = (props) => {
                       <img src={Ticket} alt='Ticket' />
                     </div>
                     <div className='arrow'>
-                      <p>This Week </p>
+                      <p>{t('本星期')} </p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -547,11 +547,11 @@ const TokenExample = (props) => {
                   </div>
                   <div className='stats'>
                     <div className='stat w-1/2'>
-                      <h4>Total Spent</h4>
+                      <h4>{t('总花费')}</h4>
                       <p> {consumeTokens}</p>
                     </div>
                     <div className='stat w-1/2'>
-                      <h4>Current Bal</h4>
+                      <h4>{t('当前余额')}</h4>
                       <p> {times}</p>
                     </div>
                   </div>
@@ -570,19 +570,19 @@ const TokenExample = (props) => {
           <Col className='search-actions'>
             <form action='' className='search-bar'>
               <IoSearch width={30} height={30} />
-              <input type='text' placeholder='Search Token Name/Key' />
+              <input type='text' placeholder={t('代币名称或键')} />
             </form>
             <button type='button' className='filter-btn'>
               <img src={Filter} alt='' />
-              Filter
+              {t('筛选')}
             </button>
-            {/* <FilterModal /> */}
             <button type='button' className='download-btn'>
               <img src={Download} alt='' />
+              {t('下载')}
             </button>
           </Col>
           <Col>
-            <TokenModal />
+            <TokenModal btnText={t('创建新令牌')}/>
           </Col>
         </Row>
         <TokenTable />
