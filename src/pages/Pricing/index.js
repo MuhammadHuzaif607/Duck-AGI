@@ -6,6 +6,7 @@ import Download from '../../../public/download.png';
 import Filter from '../../../public/filter.png';
 import Plus from '../../../public/plus.png';
 import { FaChevronDown } from 'react-icons/fa';
+import FilterModal from '../Token_example/_components/FilterModal.js';
 
 const Pricing = () => {
   return (
@@ -28,10 +29,11 @@ const Pricing = () => {
             <IoSearch width={30} height={30} />
             <input type='text' placeholder='Search Token Name/Key' />
           </form>
-          <button type='button' className='filter-btn'>
+          {/* <button type='button' className='filter-btn'>
             <img src={Filter} alt='' />
             Filter
-          </button>
+          </button> */}
+          <FilterModal />
           <button type='button' className='download-btn'>
             <img src={Download} alt='' />
           </button>

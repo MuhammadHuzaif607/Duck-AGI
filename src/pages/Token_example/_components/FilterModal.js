@@ -254,10 +254,10 @@ export default function FilterModal() {
 
   return (
     <>
-      <Button variant='outlined' onClick={handleClickOpen} className='filter-btn'>
+      <button variant='outlined' onClick={handleClickOpen} className='filter-btn'>
+      <img src={Filter} alt='filter' />
         Filter
-      </Button>
-
+      </button>
       <StyledDialog open={open} onClose={handleClose}>
         <Box sx={{ p: 3 }}>
           <DialogTitle sx={{ p: 0, mb: 2 }}>

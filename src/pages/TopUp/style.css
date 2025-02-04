@@ -244,6 +244,7 @@ p {
   font-family: Inter;
   font-weight: 400;
   color: #53545c;
+  cursor: pointer;
 }
 
 .download-btn {
