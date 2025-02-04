@@ -77,7 +77,7 @@ const About = () => {
               -pro-all (S200-package), now supports image recognition as of 12/07
             </div>
             <Container maxWidth='lg'> 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px'}}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px'}} className='footer-sec'>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center'}}>
               <img src={Duck} alt='logo'></img>
               <span style={{ fontWeight: 'bold'}}>DUCKAGI</span>

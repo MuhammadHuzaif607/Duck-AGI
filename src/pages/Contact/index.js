@@ -87,6 +87,7 @@ const Contact = () => {
             alignItems: 'center',
             padding: '10px',
           }}
+          className='footer-sec'
         >
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <img src={Duck} alt='logo'></img>
