@@ -130,7 +130,9 @@ const Home = () => {
             </h1>
 
             <p>
-             {t('借助 Singapore DuckAG 的无缝智能解决方案，将复杂数据转化为可行的见解')}
+              {t(
+                '借助 Singapore DuckAG 的无缝智能解决方案，将复杂数据转化为可行的见解',
+              )}
             </p>
 
             <div className='actions'>
