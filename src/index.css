@@ -1166,7 +1166,7 @@ code {
 }
 @media (max-width: 640px) {
   .model-section {
-    padding: 40px 24px;
+    padding: 70px 0 ;
   }
   h2 {
     font-size: 48px;

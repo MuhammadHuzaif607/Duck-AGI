@@ -90,17 +90,6 @@ const HeaderBar = () => {
     navigate('/login');
   }
 
-  // const handleNewYearClick = () => {
-  //   fireworks.init('root', {});
-  //   fireworks.start();
-  //   setTimeout(() => {
-  //     fireworks.stop();
-  //     setTimeout(() => {
-  //       window.location.reload();
-  //     }, 10000);
-  //   }, 3000);
-  // };
-
   const theme = useTheme();
   const setTheme = useSetTheme();
 
@@ -185,7 +174,16 @@ const HeaderBar = () => {
       <Grid container alignItems='center'>
         <Grid item xs={6} md={isDashboard ? 6 : 3}>
           {isDashboard ? (
-            <h1 className='head-title'>{`${pathname.substring(1)}`}</h1>
+            <>
+              <div className='hamburger' onClick={() => setIsOpen(!isOpen)}>
+                <RxHamburgerMenu />
+                <div className='wallet'>
+                  $0.00
+                  <img src={Wallet} alt='' />
+                </div>
+              </div>
+              <h1 className='head-title'>{`${pathname.substring(1)}`}</h1>
+            </>
           ) : (
             <div class='semi-navigation-header'>
               <div className='hamburger' onClick={() => setIsOpen(!isOpen)}>

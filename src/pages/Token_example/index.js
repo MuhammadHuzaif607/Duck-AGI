@@ -65,7 +65,7 @@ const TokenExample = (props) => {
     channel: '',
     data_export_default_time: '',
   });
-  const { username, model_name, start_timestamp, end_timestamp, channel } =
+  const { username, model_name, start_timestamp, end_timestamp } =
     inputs;
   const isAdminUser = isAdmin();
   const initialized = useRef(false);
@@ -525,7 +525,7 @@ const TokenExample = (props) => {
                   </div>
                 </Card>
               </Col>
-              <Col span={styleState.isMobile ? 24 : 6} style={{ width: '29%' }}>
+              <Col span={styleState.isMobile ? 24 : 7} >
                 <Card className='panel-desc-card rpm'>
                   <div className='title'>
                     <div className='icon'>

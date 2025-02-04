@@ -28,7 +28,9 @@
     display: none;
   }
   .hamburger {
-    display: block;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
   .access-button button {
     padding: 14px 20px !important;
@@ -43,6 +45,9 @@
   .actions .btn {
     padding: 13px 55px;
   }
+  .guide-actions .btn {
+    padding: 13px 55px;
+  }
   .api-fast-head img {
     display: none;
   }
@@ -55,6 +60,22 @@
   }
   #recharge-btn {
     margin-bottom: 20px;
+  }
+  .hero.api-fast-sec {
+    margin: 0;
+  }
+  .hero.api-fast-sec .content {
+    padding-bottom: 70px;
+    padding-top: 10px;
+  }
+  .api-fast-sec .dashboard-preview .light {
+    display: none;
+  }
+  .api-fast-head {
+    display: block;
+  }
+  .guide-container {
+    padding: 0 20px;
   }
   /* Footer css */
   .footer-sec {
@@ -107,15 +128,22 @@
 
 @media (max-width: 600px) {
   .model-section h2 {
-    font-size: 60px;
+    font-size: 80px;
+    padding-bottom: 30px;
   }
-
   .model-section h2 span {
-    font-size: 30px;
+    font-size: 80px;
   }
-
   .model-actions {
     flex-direction: column;
+  }
+  .model-section .MuiGrid-container {
+    row-gap: 40px;
+    width: 100%;
+    margin: 0;
+  }
+  .model-actions .btn {
+    padding: 14px 55px;
   }
 }
 
@@ -150,7 +178,8 @@
 
 @media (max-width: 600px) {
   .support-model {
-    padding-top: 150px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
   .support-model .content h3 {
@@ -160,13 +189,25 @@
   .support-model .content p {
     font-size: 16px;
   }
+  .dash-actions .wallet {
+    display: none;
+  }
+
+  .dash-actions .wallet + .semi-navigation-item {
+    display: none;
+  }
+  .head-title {
+    display: none;
+  }
 }
 
 /* Styles for the guide container */
 @media (max-width: 960px) {
   .guide-container > div {
-    padding: 30px;
-    margin-top: 80px;
+    width: 100%;
+    margin: 0;
+    padding: 30px 20px;
+    margin-top: 70px;
   }
 
   .guide-left h4 {
@@ -176,6 +217,7 @@
   .guide-left p {
     font-size: 16px;
     margin-bottom: 40px;
+    margin-top: 30px;
   }
 
   p.guide-description {
@@ -185,8 +227,9 @@
 
 @media (max-width: 600px) {
   .guide-container > div {
-    padding: 20px;
+    padding: 50px 20px;
     margin-top: 60px;
+    row-gap: 50px;
   }
 
   .guide-left h4 {
