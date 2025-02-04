@@ -194,11 +194,11 @@ function App() {
         <Route
           path='/setting'
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <Suspense fallback={<Loading></Loading>}>
                 <Setting />
               </Suspense>
-            //  {/* </PrivateRoute> */}
+             </PrivateRoute>
           }
         />
         <Route
