@@ -8,7 +8,6 @@ import Plus from '../../../../public/plus.png';
 // import './modal.css';
 import { RxCross2 } from 'react-icons/rx';
 import { Switch } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 
 // Add this custom Switch styling
 const blackSwitch = {
@@ -23,7 +22,7 @@ const blackSwitch = {
   },
 };
 
-export default function TokenModal({ btnText }) {
+export default function TokenModal() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -33,13 +32,12 @@ export default function TokenModal({ btnText }) {
   const handleClose = () => {
     setOpen(false);
   };
-  const { t } = useTranslation();
 
   return (
     <>
       <Button variant='outlined' onClick={handleClickOpen} id='recharge-btn'>
         <img src={Plus} alt='' />
-        {btnText}
+        Create New Token
       </Button>
 
       <Dialog
@@ -65,47 +63,39 @@ export default function TokenModal({ btnText }) {
         <div className='modal-overlay token-modal'>
           <div className='modal'>
             <div className='modal-header'>
-              <h3>{t('创建新令牌')}</h3> {/* "Create New Token" */}
+              <h3>Create New Token</h3>
             </div>
             <div className='modal-content'>
               <form action=''>
                 <div className='new-token'>
                   <div className='w-1/2 form-fields'>
                     <div className='form-field'>
-                      <label htmlFor=''>{t('令牌名称')}</label>{' '}
-                      {/* "Token Name" */}
-                      <input type='text' placeholder={t('为此令牌命名')} />{' '}
-                      {/* "Give This Token a Name" */}
+                      <label htmlFor=''>Token Name</label>
+                      <input type='text' placeholder='Give This Token a Name' />
                     </div>
                     <div className='info'>
                       <div className='icon'></div>
                       <p>
-                        {t(
-                          '令牌的配额设置了最大使用限制，但实际使用量取决于账户的剩余配额。',
-                        )}
-                        <span>{t('我明白')}</span>{' '}
-                        {/* "The token's quota sets its maximum usage limit, but actual usage depends on the account's remaining quota." */}
+                        The token's quota sets its maximum usage limit, but
+                        actual usage depends on the account's remaining quota.{' '}
+                        <span>I understand</span>
                       </p>
                     </div>
                     <div className='form-field'>
-                      <label htmlFor=''>{t('配额|等值金额：$1.00')}</label>{' '}
-                      {/* "Quota|Equivalent Amount: $1.00" */}
+                      <label htmlFor=''>Quota|Equivalent Amount: $1.00</label>
                       <input type='number' placeholder='$0.00' />
                       <FormControlLabel
                         control={<Switch defaultChecked sx={blackSwitch} />}
-                        label={t('标签')}
+                        label='Label'
                       />
-                      <p>{t('设置此令牌的配额为无限制')}</p>{' '}
-                      {/* "Set this token quota to unlimited" */}
+                      <p>Set this token qouta to unlimited</p>
                     </div>
                     <div className='form-field'>
-                      <label htmlFor=''>{t('新数量')}</label>{' '}
-                      {/* "New Quantity" */}
+                      <label htmlFor=''>New Quantity</label>
                       <input type='number' placeholder='1' />
                     </div>
                     <div className='ip-list'>
-                      <p>{t('IP 白名单（不要过度信任此功能）')}</p>{' '}
-                      {/* "IP whitelist (do not overly trust this function)" */}
+                      <p>IP whitelist (do not overly trust this function)</p>
                       <div className='ip-list-item'>
                         <span> 192.93.03.1 X</span>
                         <span> 192.93.03.1 X</span>
@@ -114,27 +104,24 @@ export default function TokenModal({ btnText }) {
                   </div>
                   <div className='w-1/2 form-fields'>
                     <div className='config'>
-                      <h4>{t('令牌配置')}</h4> {/* "Token Configuration" */}
+                      <h4>Token Configuration</h4>
                       <div className='switch'>
                         <FormControlLabel
                           control={<Switch defaultChecked sx={blackSwitch} />}
-                          label={t('设置过期时间')}
+                          label='Set expiration'
                         />
-                        <p>{t('为此令牌添加过期时间')}</p>{' '}
-                        {/* "Add an expiration to this token" */}
+                        <p>Add an expiration to this token</p>
                       </div>
                       <div className='switch'>
                         <FormControlLabel
                           control={<Switch defaultChecked sx={blackSwitch} />}
-                          label={t('自动选择组')}
+                          label='Auto select group'
                         />
-                        <p>{t('组将被自动选择')}</p>{' '}
-                        {/* "Group will be selected automatically" */}
+                        <p>Group will be selected automatically</p>
                       </div>
                     </div>
                     <div className='form-field'>
-                      <label htmlFor=''>{t('令牌名称')}</label>{' '}
-                      {/* "Token Name" */}
+                      <label htmlFor=''>Token Name</label>
                       <input type='number ' placeholder='1' />
                     </div>
                   </div>
@@ -143,10 +130,10 @@ export default function TokenModal({ btnText }) {
             </div>
             <DialogActions className='action-btns'>
               <Button onClick={handleClose} className='cancel-button'>
-                {t('取消')} {/* "Cancel" */}
+                Cancel
               </Button>
               <Button onClick={handleClose} autoFocus className='redeem-button'>
-                {t('兑换')} {/* "Redeem" */}
+                Redeem
               </Button>
             </DialogActions>
             <DialogActions>

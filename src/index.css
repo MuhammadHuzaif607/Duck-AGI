@@ -318,7 +318,7 @@ code {
   right: 30px;
 }
 /* Contact page css */
-.semi-layout{
+.semi-layout {
   position: relative;
 }
 .contact-header {
@@ -436,16 +436,16 @@ code {
   border: none;
 }
 
-.contact-sec .announcement{
+.contact-sec .announcement {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
   color: #000000;
   font-size: 16px;
   text-align: left;
 }
-.contact-sec .announcement p{
+.contact-sec .announcement p {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -985,7 +985,7 @@ code {
   margin-bottom: -220px;
 }
 .announcement {
-  position: sticky;
+  position: fixed;
   background: rgba(79, 70, 229, 0.1);
   color: #4f46e5;
   font-size: 16px;
@@ -995,6 +995,30 @@ code {
   padding: 12px 0;
   text-align: center;
   z-index: 99;
+}
+.announcementFooter {
+  /* position: fixed;
+  bottom: 0; */
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  z-index: 99;
+}
+.announcementFooterHome {
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+    z-index:  99;
 }
 .home {
   position: relative;
@@ -1494,12 +1518,12 @@ p.guide-description {
 .user-info {
   display: flex;
   flex-wrap: wrap;
-  margin-top:40px ;
+  margin-top: 40px;
   justify-content: space-between;
 }
-.user-img{
+.user-img {
   width: 35%;
 }
-.user-info form{
+.user-info form {
   width: 60%;
 }

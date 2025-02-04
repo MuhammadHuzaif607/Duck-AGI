@@ -40,9 +40,9 @@ import TokenTable from './_components/TokenTable.js';
 import './style.css';
 import { IoSearch } from 'react-icons/io5';
 import Download from '../../../public/download.png';
-import Filter from '../../../public/filter.png';
+// import Filter from '../../../public/filter.png';
 import TokenModal from './_components/TokenModal.js';
-// import FilterModal from './_components/FilterModal.js'
+import FilterModal from './_components/FilterModal.js'
 
 const TokenExample = (props) => {
   const { t } = useTranslation();
@@ -50,6 +50,7 @@ const TokenExample = (props) => {
   let now = new Date();
   const [userState, userDispatch] = useContext(UserContext);
   const [styleState, styleDispatch] = useContext(StyleContext);
+  const [open, setOpen] = useState(false);
   const [inputs, setInputs] = useState({
     username: '',
     token_name: '',
@@ -429,6 +430,7 @@ const TokenExample = (props) => {
 
   return (
     <>
+     
       <Layout>
         {/* <Layout.Header>
           <h3>{t('数据看板')}</h3>
@@ -447,7 +449,7 @@ const TokenExample = (props) => {
                       <img src={Code} alt='Code' />
                     </div>
                     <div className='arrow'>
-                      <p>{t('本星期')}</p>
+                      <p>This Week </p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -465,11 +467,11 @@ const TokenExample = (props) => {
 
                   <div className='stats'>
                     <div className='stat w-1/2'>
-                      <h4>{t('所有代币')}</h4>
+                      <h4>All Tokens</h4>
                       <p> {renderQuota(userState?.user?.quota)}</p>
                     </div>
                     <div className='stat w-1/2'>
-                      <h4>{t('积极的')}</h4>
+                      <h4>Active</h4>
                       <div className='detail-stat'>
                         <p> {renderQuota(userState?.user?.used_quota)}</p>
                         <span>+0.00%</span>
@@ -489,7 +491,7 @@ const TokenExample = (props) => {
                       <img src={Trending} alt='Trending' />
                     </div>
                     <div className='arrow'>
-                      <p>{t('本星期')}</p>
+                      <p>This Week </p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -506,15 +508,15 @@ const TokenExample = (props) => {
                   </div>
                   <div className='stats'>
                     <div className='stat w-1/3'>
-                      <h4>{t('通话次数')}</h4>
+                      <h4>No. of Calls</h4>
                       <p> {renderQuota(consumeQuota)}</p>
                     </div>
                     <div className='stat w-1/3'>
-                      <h4>{t('成功')}</h4>
+                      <h4>Success</h4>
                       <p> {consumeTokens}</p>
                     </div>
                     <div className='stat w-1/3'>
-                      <h4>{t('失败')}</h4>
+                      <h4>Failed</h4>
                       <div className='detail-stat'>
                         <p> {times}</p>
                         <span>+0.00%</span>
@@ -530,7 +532,7 @@ const TokenExample = (props) => {
                       <img src={Ticket} alt='Ticket' />
                     </div>
                     <div className='arrow'>
-                      <p>{t('本星期')} </p>
+                      <p>This Week </p>
                       <svg
                         stroke='currentColor'
                         fill='currentColor'
@@ -547,11 +549,11 @@ const TokenExample = (props) => {
                   </div>
                   <div className='stats'>
                     <div className='stat w-1/2'>
-                      <h4>{t('总花费')}</h4>
+                      <h4>Total Spent</h4>
                       <p> {consumeTokens}</p>
                     </div>
                     <div className='stat w-1/2'>
-                      <h4>{t('当前余额')}</h4>
+                      <h4>Current Bal</h4>
                       <p> {times}</p>
                     </div>
                   </div>
@@ -570,19 +572,20 @@ const TokenExample = (props) => {
           <Col className='search-actions'>
             <form action='' className='search-bar'>
               <IoSearch width={30} height={30} />
-              <input type='text' placeholder={t('代币名称或键')} />
+              <input type='text' placeholder='Search Token Name/Key' />
             </form>
-            <button type='button' className='filter-btn'>
+            {/* <button type='button' className='filter-btn' onClick={() => setOpen(true)}>
               <img src={Filter} alt='' />
-              {t('筛选')}
-            </button>
+              Filter
+            </button> */}
+            <FilterModal />
+            {/* <FilterModal /> */}
             <button type='button' className='download-btn'>
               <img src={Download} alt='' />
-              {t('下载')}
             </button>
           </Col>
           <Col>
-            <TokenModal btnText={t('创建新令牌')}/>
+            <TokenModal />
           </Col>
         </Row>
         <TokenTable />

@@ -15,6 +15,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
 import Copy from '../../../../public/copy.png';
 import { showSuccess } from '../../../helpers';
+import HeaderImage from "../images/sort.png";
 
 function createData(
   token_name,
@@ -36,36 +37,53 @@ function createData(
 
 const rows = [
   createData(
-    'My eCommerce Token',
-    'Active',
-    '$2.80',
-    '$39.30',
     '12 Aug 2022 - 12:25 am',
-    '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
   ),
   createData(
-    'Nelly API',
-    'Active',
-    '$2.80',
-    '$39.30',
     '12 Aug 2022 - 12:25 am',
-    '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
   ),
   createData(
-    'Connections',
-    'Disabled',
-    '$2.80',
-    '$39.30',
     '12 Aug 2022 - 12:25 am',
-    '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
   ),
   createData(
-    'API Build',
-    'Active',
-    '$2.80',
-    '$39.30',
     '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
+  ),
+  createData(
     '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
+  ),
+  createData(
+    '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
+  ),
+  createData(
+    '12 Aug 2022 - 12:25 am',
+    '5',
+    'Web',
+    'Windows',
+    '102.03.33.0.1',
   ),
 ];
 
@@ -87,40 +105,34 @@ function getComparator(order, orderBy) {
 
 const headCells = [
   {
-    id: 'token_name',
+    id: 'date_time',
     numeric: false,
     disablePadding: true,
-    label: 'Token Name',
+    label: 'Date/Time',
   },
   {
-    id: 'status',
+    id: 'session',
     numeric: true,
     disablePadding: false,
-    label: 'Status',
+    label: 'Session',
   },
   {
-    id: 'qouta_used',
+    id: 'type',
     numeric: true,
     disablePadding: false,
-    label: 'Qouta Used',
+    label: 'Type',
   },
   {
-    id: 'qouta_bal',
+    id: 'os',
     numeric: true,
     disablePadding: false,
-    label: 'Qouta Balance',
+    label: 'OS',
   },
   {
-    id: 'created',
+    id: 'ip',
     numeric: true,
     disablePadding: false,
-    label: 'Created',
-  },
-  {
-    id: 'expiration',
-    numeric: true,
-    disablePadding: false,
-    label: 'Expiration',
+    label: 'IP',
   },
 ];
 
@@ -154,7 +166,6 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            // align={headCell.numeric ? 'right' : 'left'}
             align='left'
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
@@ -163,8 +174,10 @@ function EnhancedTableHead(props) {
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
+              hideSortIcon 
             >
               {headCell.label}
+              <img src={HeaderImage} alt='sort icon' style={{ marginLeft: 5 }} />
               {orderBy === headCell.id ? (
                 <Box component='span' sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
@@ -190,54 +203,6 @@ EnhancedTableHead.propTypes = {
 function EnhancedTableToolbar(props) {
   const { numSelected } = props;
   return (
-    // <Toolbar
-    //   sx={[
-    //     {
-    //       pl: { sm: 2 },
-    //       pr: { xs: 1, sm: 1 },
-    //     },
-    //     numSelected > 0 && {
-    //       bgcolor: (theme) =>
-    //         alpha(
-    //           theme.palette.primary.main,
-    //           theme.palette.action.activatedOpacity,
-    //         ),
-    //     },
-    //   ]}
-    // >
-    //   {numSelected > 0 ? (
-    //     <Typography
-    //       sx={{ flex: '1 1 100%' }}
-    //       color='inherit'
-    //       variant='subtitle1'
-    //       component='div'
-    //     >
-    //       {numSelected} selected
-    //     </Typography>
-    //   ) : (
-    //     <Typography
-    //       sx={{ flex: '1 1 100%' }}
-    //       variant='h6'
-    //       id='tableTitle'
-    //       component='div'
-    //     >
-    //       Nutrition
-    //     </Typography>
-    //   )}
-    //   {numSelected > 0 ? (
-    //     <Tooltip title='Delete'>
-    //       <IconButton>
-    //         <DeleteIcon />
-    //       </IconButton>
-    //     </Tooltip>
-    //   ) : (
-    //     <Tooltip title='Filter list'>
-    //       <IconButton>
-    //         <FilterListIcon />
-    //       </IconButton>
-    //     </Tooltip>
-    //   )}
-    // </Toolbar>
     <> </>
   );
 }
@@ -246,16 +211,13 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function TokenTable() {
+export default function DeviceTable() {
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('token_name');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(11);
-  const [openSnackbar, setOpenSnackbar] = React.useState(false);
-  const [snackbarMessage, setSnackbarMessage] = React.useState('');
-  const [snackbarSeverity, setSnackbarSeverity] = React.useState('success');
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -305,7 +267,6 @@ export default function TokenTable() {
     setDense(event.target.checked);
   };
 
-  // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
@@ -398,21 +359,11 @@ export default function TokenTable() {
                           handleCopy(row.token_name);
                         }}
                       >
-                        <img src={Copy} alt='copy' />
+                        {/* <img src={Copy} alt='copy' /> */}
                       </span>
                     </TableCell>
                     <TableCell align='left'>
                       <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <span
-                          style={{
-                            display: 'inline-block',
-                            width: '4px',
-                            height: '14px',
-                            backgroundColor: getStatusColor(row.status),
-                            marginRight: '8px',
-                            borderRadius: '15px',
-                          }}
-                        ></span>
                         {row.status}
                       </div>
                     </TableCell>
@@ -421,57 +372,12 @@ export default function TokenTable() {
                       {row.qouta_bal}
                     </TableCell>
                     <TableCell align='left'>{row.created}</TableCell>
-                    {/* <TableCell align='left'>{row.expiration}</TableCell> */}
-
+                   
                     <TableCell
-                                // component='th'
-                                // id={labelId}
-                                // scope='row'
-                                // padding='none'
-                                // className='trans-id'
                                 align='left'
         >
           {row.expiration}
 
-          {/* <div
-            className="icons-overlay" // Class used for applying MUI styles on hover
-            sx={{
-              display: 'none', // Hidden by default
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'white',
-              boxShadow: 3, // MUI boxShadow for shadow effect
-              padding: 1,
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              gap: '5px',
-              '& span': {
-                display: 'inline-block',
-              },
-            }}
-          >
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-          </div> */}
         </TableCell>
                   </TableRow>
                 );
@@ -498,10 +404,7 @@ export default function TokenTable() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      {/* <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label='Dense padding'
-      /> */}
+      
     </Box>
   );
 }

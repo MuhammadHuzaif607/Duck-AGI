@@ -28,10 +28,10 @@
   .semi-col-12.hidden {
     display: none;
   }
-  .hidden-xs{
+  .hidden-xs {
     display: none;
   }
-  .hamburger{
+  .hamburger {
     display: block;
   }
   .access-button button {
@@ -40,6 +40,22 @@
   }
   .access-button {
     margin-top: 20px;
+  }
+  .actions btn {
+    padding: 14px 55px;
+  }
+  .api-fast-head img {
+    display: none;
+  }
+  .panel-desc-card {
+    margin-bottom: 20px;
+  }
+  .search-actions {
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+  #recharge-btn {
+    margin-bottom: 20px;
   }
 }
 
