@@ -18,6 +18,7 @@ const WebFooter = () => {
             alignItems: 'center',
             padding: '10px',
           }}
+          className='footer-sec'
         >
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <img src={Duck} alt='logo'></img>
@@ -42,7 +43,7 @@ const WebFooter = () => {
                 <Link to={'/pricing'}>Pricing</Link>
               </li>
               <li>
-                <Link>Documentation</Link>
+                <Link >Documentation</Link>
               </li>
               <li>
                 <Link to={'/about'}>About</Link>

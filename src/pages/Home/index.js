@@ -170,7 +170,7 @@ const Home = () => {
               </Grid>
               <Grid xs={12} md={5}>
                 <div className='brand'>
-                  <Typography variant='h3'>API </Typography>
+                  <Typography variant='h3'>API Aggregation Brand</Typography>
                   <Typography variant='body1'>
                     We are committed to the achievement of providing a highly
                     stable enterprise-level 2000Mbps bandwidth service. It
