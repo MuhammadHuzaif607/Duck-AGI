@@ -82,7 +82,7 @@ const Contact = () => {
     </Container>
 
         <div className='announcementFooter'>
-          The latest OpenAI AI model, {{a1-d8}} (upgraded version) and{' '}
+          The latest OpenAI AI model, {a1-d8} (upgraded version) and{' '}
           {{r1}}
           -pro-all (S200-package), now supports image recognition as of 12/07
         </div>
