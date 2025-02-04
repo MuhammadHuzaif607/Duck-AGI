@@ -2,16 +2,13 @@ import React from 'react';
 import {
   Box,
   Typography,
-  TextField,
-  Button,
   Container,
   Link,
   Grid,
-  Paper,
 } from '@mui/material';
 import Globe from './images/globe_pur.png';
 import Email from './images/mail_pur.png';
-import WebFooter from '../../components/custom/Footer';
+import Duck from '/duck.png';
 
 const Contact = () => {
   return (
@@ -84,7 +81,38 @@ const Contact = () => {
       </Grid>
     </Container>
 
-<WebFooter />
+        <div className='announcementFooter'>
+          The latest OpenAI AI model, {{a1-d8}} (upgraded version) and{' '}
+          {{r1}}
+          -pro-all (S200-package), now supports image recognition as of 12/07
+        </div>
+        <Container maxWidth='lg'> 
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px'}}>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center'}}>
+          <img src={Duck} alt='logo'></img>
+          <span style={{ fontWeight: 'bold'}}>DUCKAGI</span>
+          </div>
+          <div>
+            <ul style={{ display: 'flex', alignItems: 'center', gap: '20px', listStyle: 'none'}}>
+              <li>
+              <Link to={'/'}>Home</Link>
+              </li>
+              <li>
+              <Link to={'/token'}>Console</Link>
+              </li>
+              <li>
+              <Link to={'/pricing'}>Pricing</Link>             
+              </li>
+              <li>
+              <Link>Documentation</Link>
+              </li>
+              <li>
+              <Link to={'/about'}>About</Link> 
+              </li>
+            </ul>
+          </div>
+        </div>   
+        </Container> 
 </>
   );
 };
