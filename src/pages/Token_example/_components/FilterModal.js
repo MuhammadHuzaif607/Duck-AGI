@@ -204,9 +204,11 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers';
+import { DateCalendar, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import Filter from '/filter.png';
+import { t } from 'i18next';
+import DateCalendarValue from './DateModal';
 
 const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
@@ -244,7 +246,8 @@ export default function FilterModal() {
     lastYear: false,
     dateRange: false,
   });
-
+  const [select, setSelect] = React.useState(false);
+  const [value, setValue] = React.useState(Date.now());
   const handleClickOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleTabChange = (event, newValue) => setTabValue(newValue);
@@ -256,7 +259,8 @@ export default function FilterModal() {
     <>
       <button variant='outlined' onClick={handleClickOpen} className='filter-btn'>
       <img src={Filter} alt='filter' />
-        Filter
+        {/* Filter */}
+        {t('筛选')}
       </button>
       <StyledDialog open={open} onClose={handleClose}>
         <Box sx={{ p: 3 }}>
@@ -391,11 +395,20 @@ export default function FilterModal() {
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <Checkbox
                     checked={dateFilters.dateRange}
-                    onChange={handleCheckboxChange}
+                    onChange={() => {
+                      handleCheckboxChange
+                      setSelect(!select)
+                    }
+                  }
                     name='dateRange'
                   />
                   <Typography sx={{ flex: 1, textAlign: 'start' }}>Date Range</Typography>
                 </Box>
+                {
+                  select && (
+                    <DateCalendarValue />
+                  )
+                }
               </Box>
             )}
           </DialogContent>

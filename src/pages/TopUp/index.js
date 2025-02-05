@@ -32,6 +32,7 @@ import Download from '../../../public/download.png';
 import Filter from '../../../public/filter.png';
 import PaymentModal from '../../components/custom/PaymentModal';
 import EnhancedTable from '../../components/custom/Table.js';
+import FilterModal from '../Token_example/_components/FilterModal.js';
 
 const TopUp = () => {
   const { t } = useTranslation();
@@ -407,10 +408,11 @@ const TopUp = () => {
             <IoSearch width={30} height={30} />
             <input type='text' placeholder={t('搜索代币名称/键')} />
           </form>
-          <button type='button' className='filter-btn'>
+          {/* <button type='button' className='filter-btn'>
             <img src={Filter} alt='' />
             {t('筛选')}
-          </button>
+          </button> */}
+          <FilterModal />
           <button type='button' className='download-btn'>
             <img src={Download} alt='' />
           </button>

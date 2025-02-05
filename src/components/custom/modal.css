@@ -229,10 +229,27 @@
   background-color: #6175de;
 }
 
+.action-btns01 .redeem-button {
+  width: 53%;
+  padding: 12px 0;
+  border-radius: 13px;
+  font-family: Open-sans;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6175de;
+}
+
 .action-btns {
   justify-content: space-between !important;
   padding: 0 !important;
 }
+.action-btns01 {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
 .close {
   position: absolute;
   top: 15px;
