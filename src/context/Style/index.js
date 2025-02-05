@@ -54,7 +54,8 @@ export const StyleProvider = ({ children }) => {
         pathname.includes('/contact') ||
         pathname.includes('/blog') ||
         pathname.includes('/about') ||
-        pathname.includes('/login')
+        pathname.includes('/login') ||
+        pathname.includes('/register')
       ) {
         dispatch({ type: 'SET_SIDER', payload: false });
         dispatch({ type: 'SET_INNER_PADDING', payload: false });

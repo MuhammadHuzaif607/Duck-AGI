@@ -1018,7 +1018,16 @@ code {
   width: 100%;
   padding: 12px 0;
   text-align: center;
-    z-index:  99;
+  z-index: 99;
+}
+.responsive-hidden {
+  display: block; /* Ensure it is visible by default */
+}
+
+@media (max-width: 600px) {
+  .responsive-hidden {
+    display: none; /* Hide element on smaller screens */
+  }
 }
 .home {
   position: relative;

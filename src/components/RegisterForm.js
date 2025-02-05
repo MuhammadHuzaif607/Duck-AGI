@@ -28,12 +28,22 @@ import TelegramLoginButton from 'react-telegram-login/src';
 import { setUserData } from '../helpers/data.js';
 import { UserContext } from '../context/User/index.js';
 import { useTranslation } from 'react-i18next';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import {
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  InputLabel,
+} from '@mui/material';
 
 const RegisterForm = () => {
   const { t } = useTranslation();
   const [inputs, setInputs] = useState({
-    username: '',
-    password: '',
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    isBusiness: false,
     password2: '',
     email: '',
     verification_code: '',
@@ -49,6 +59,11 @@ const RegisterForm = () => {
   const [status, setStatus] = useState({});
   let navigate = useNavigate();
   const logo = getLogo();
+  const [phone, setPhone] = useState('');
+
+  const handlePhoneChange = (value) => {
+    setPhone(value);
+  };
 
   let affCode = new URLSearchParams(window.location.search).get('aff');
   if (affCode) {
@@ -183,7 +198,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
+    <div style={{margin: 20}}>
       <Layout>
         <Layout.Header></Layout.Header>
         <Layout.Content>
@@ -194,20 +209,83 @@ const RegisterForm = () => {
               marginTop: 120,
             }}
           >
-            <div style={{ width: 500 }}>
-              <Card>
-                <Title heading={2} style={{ textAlign: 'center' }}>
-                  {t('新用户注册')}
-                </Title>
-                <Form size='large'>
-                  <Form.Input
-                    field={'username'}
-                    label={t('用户名')}
-                    placeholder={t('用户名')}
-                    name='username'
-                    onChange={(value) => handleChange('username', value)}
-                  />
-                  <Form.Input
+            <div style={{ width: 700, display: 'flex' }}>
+              <Card style={{ width: 280 , backgroundColor: '#fff1b8'}} className='responsive-hidden'>
+              </Card>
+              <Card style={{ flex: 1 }}>
+
+                  <Title heading={2} style={{ textAlign: 'center' }}>
+                    {/* {t('新用户注册')} */}
+                    {t('干得不错！')}
+                  </Title>
+                  <Title
+                    style={{
+                      textAlign: 'center',
+                      fontSize: 14,
+                      fontWeight: 400,
+                    }}
+                  >
+                    {t('再提供一些信息。')}
+                  </Title>
+                  <Form size='large'>
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '10px'
+                      }}
+                    >
+                      <Form.Input
+                        field={'firstName'}
+                        label={t('名')}
+                        placeholder={t('名')}
+                        name='firstname'
+                        onChange={(value) => handleChange('firstName', value)}
+                      />
+
+                      <Form.Input
+                        field={'lastName'}
+                        label={t('姓')}
+                        placeholder={t('姓')}
+                        name='lastname'
+                        onChange={(value) => handleChange('lastName', value)}
+                      />
+                    </div>
+
+                    <div style={{ marginTop: '10px' }}>
+                      <span style={{ fontWeight: 'bold' }}>
+                        {t('电话号码')}
+                      </span>
+
+                      <PhoneInput
+                        country={'cn'}
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        inputStyle={{
+                          width: '100%',
+                          padding: '10px',
+                          borderRadius: '5px',
+                          borderColor: '#ccc',
+                        }}
+                        buttonStyle={{
+                          borderRadius: '5px',
+                        }}
+                      />
+                    </div>
+
+                    <div style={{ marginTop: '10px' }}>
+                      <FormControlLabel
+                        control={<Checkbox />}
+                        label='Business Account'
+                      />
+                    </div>
+
+                    <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                      <button className='btn'>{t('继续')}</button>
+                    </div>
+
+                    {/* <Form.Input
                     field={'password'}
                     label={t('密码')}
                     placeholder={t('输入密码，最短 8 位，最长 20 位')}
@@ -263,9 +341,10 @@ const RegisterForm = () => {
                     onClick={handleSubmit}
                   >
                     {t('注册')}
-                  </Button>
-                </Form>
-                <div
+                  </Button> */}
+                  </Form>
+
+                {/* <div
                   style={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -276,8 +355,9 @@ const RegisterForm = () => {
                     {t('已有账户？')}
                     <Link to='/login'>{t('点击登录')}</Link>
                   </Text>
-                </div>
-                {status.github_oauth ||
+                </div> */}
+
+                {/* {status.github_oauth ||
                 status.wechat_login ||
                 status.telegram_oauth ||
                 status.linuxdo_oauth ? (
@@ -345,9 +425,9 @@ const RegisterForm = () => {
                   </>
                 ) : (
                   <></>
-                )}
+                )} */}
               </Card>
-              <Modal
+              {/* <Modal
                 title={t('微信扫码登录')}
                 visible={showWeChatLoginModal}
                 maskClosable={true}
@@ -384,8 +464,8 @@ const RegisterForm = () => {
                     }
                   />
                 </Form>
-              </Modal>
-              {turnstileEnabled ? (
+              </Modal> */}
+              {/* {turnstileEnabled ? (
                 <div
                   style={{
                     display: 'flex',
@@ -402,7 +482,7 @@ const RegisterForm = () => {
                 </div>
               ) : (
                 <></>
-              )}
+              )} */}
             </div>
           </div>
         </Layout.Content>
