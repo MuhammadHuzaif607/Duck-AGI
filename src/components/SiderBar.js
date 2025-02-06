@@ -94,7 +94,7 @@ const SiderBar = () => {
         icon: <img src={Chat} alt='Chat' style={{ width: 20, height: 20 }} />,
       },
       {
-        text: t('代币 '),
+        text: t('代币'),
         itemKey: 'token',
         to: '/token',
         icon: (
@@ -256,7 +256,7 @@ const SiderBar = () => {
           </div>
         </div>
         <Nav
-          style={{ maxWidth: 220, height: '100%' }}
+          style={{ maxWidth: 225, height: '100vh', overflowY: 'auto' }}
           defaultIsCollapsed={
             localStorage.getItem('default_collapse_sidebar') === 'true'
           }
@@ -304,7 +304,30 @@ const SiderBar = () => {
             setSelectedKeys([key.itemKey]);
           }}
         >
-          <Nav.Footer>
+          {
+            !isCollapsed && (
+              <Nav.Item style={{marginBottom: '10px'}}>
+              <div style={{ backgroundColor: '##f5f6f8', padding: '5px', borderRadius: '6px'}}>
+                  <span style={{ color: 'gray'}}>Chat shortcuts</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px', gap: '10px', fontWeight: 300 }}>
+                       <span>
+                       Official website
+                       </span>
+                       <span>
+                       Documentation
+                       </span>
+                       <span>
+                       Online Customer Service
+                       </span>
+                       <span>
+                       Community
+                       </span>
+                  </div>
+                </div>
+              </Nav.Item>
+            )
+          }
+          <Nav.Footer style={{marginBottom: '10px'}}>
             <ul className='semi-navigation-list'>
               <Link style={{ textDecoration: 'none' }} to='settings'>
                 <li

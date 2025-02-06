@@ -52,6 +52,12 @@ body {
   font-size: 18px;
   color: #7a7a7a;
 }
+.full-text {
+  display: inline;
+}
+.short-text {
+  display: none;
+}
 .main-menu ul li a:hover {
   color: #000;
 }
@@ -65,6 +71,9 @@ header {
   font-weight: 500;
   text-transform: capitalize;
 }
+.smHidden{
+  display: block;
+}
 header .btn {
   padding: 11px 36px !important;
 }
@@ -75,7 +84,7 @@ header .actions {
 }
 header .sec-button {
   border: 0;
-  padding: 0 !important;
+  padding: 0;
 }
 .semi-descriptions-double-small .semi-descriptions-item {
   padding-right: 30px;

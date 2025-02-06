@@ -9,15 +9,32 @@
   .hero h1 {
     font-size: 36px;
   }
-
+  .full-text {
+    display: none;
+  }
+  .short-text {
+    display: inline;
+  }
   .hero p {
     font-size: 16px;
   }
-
-  .actions {
-    flex-direction: column;
+  .smHidden{
+    display: none;
   }
-
+  .responsive-btn01{
+    padding: 13px 20px !important;
+  }
+  .sec-button01{
+    border: 2px solid #000 !important;
+    border-radius: 10px;
+    padding: 0px 15px !important;
+  }
+  .actions {
+    flex-direction: row;
+    gap: 12px !important;
+    padding: 0px !important;
+  }
+   
   .dashboard-preview img {
     width: 100%;
   }

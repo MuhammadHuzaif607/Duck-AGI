@@ -165,7 +165,9 @@ const HeaderBar = () => {
     pathname.includes('midjourney') ||
     pathname.includes('task') ||
     pathname.includes('connections') ||
+    pathname.includes('user') ||
     pathname.includes('setting') ||
+    pathname.includes('redemption') ||
     pathname.includes('pricing');
 
   const [isOpen, setIsOpen] = useState(false);
@@ -192,7 +194,7 @@ const HeaderBar = () => {
               <i class='semi-navigation-header-logo'>
                 <img src={Duck} alt='logo'></img>
               </i>
-              <span class='semi-navigation-header-text'>DUCKAGI</span>
+              <span class='semi-navigation-header-text smHidden'>DUCKAGI</span>
             </div>
           )}
         </Grid>
@@ -367,17 +369,18 @@ const HeaderBar = () => {
                 <>
                   <button
                     variant='outlined'
-                    className='sec-button'
+                    className='sec-button sec-button01 responsive-btn01'
                     onClick={() => navigate('/login')}
                   >
                     Login
                   </button>
                   <button
                     variant='contained'
-                    className='btn'
+                    className='btn responsive-btn01'
                     onClick={() => navigate('/register')}
                   >
-                    Create an account
+<span className="full-text">Create an account</span>
+<span className="short-text">Signup</span>
                   </button>
                 </>
               ) : (
