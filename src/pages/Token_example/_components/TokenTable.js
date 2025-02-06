@@ -15,6 +15,14 @@ import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
 import Copy from '../../../../public/copy.png';
 import { showSuccess } from '../../../helpers';
+import {
+  FaCheck,
+  FaCopy,
+  FaEnvelope,
+  FaEdit,
+  FaBan,
+  FaTrash,
+} from 'react-icons/fa';
 
 function createData(
   token_name,
@@ -256,6 +264,7 @@ export default function TokenTable() {
   const [openSnackbar, setOpenSnackbar] = React.useState(false);
   const [snackbarMessage, setSnackbarMessage] = React.useState('');
   const [snackbarSeverity, setSnackbarSeverity] = React.useState('success');
+  const [hoveredRow, setHoveredRow] = React.useState(null);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -372,8 +381,9 @@ export default function TokenTable() {
                     tabIndex={-1}
                     key={row.token_name}
                     selected={isItemSelected}
+                    onMouseEnter={() => setHoveredRow(row.token_name)}
+                    onMouseLeave={() => setHoveredRow(null)}
                     sx={{ cursor: 'pointer' }}
-
                   >
                     <TableCell padding='checkbox'>
                       <Checkbox
@@ -423,56 +433,46 @@ export default function TokenTable() {
                     <TableCell align='left'>{row.created}</TableCell>
                     {/* <TableCell align='left'>{row.expiration}</TableCell> */}
 
-                    <TableCell
-                                // component='th'
-                                // id={labelId}
-                                // scope='row'
-                                // padding='none'
-                                // className='trans-id'
-                                align='left'
-        >
-          {row.expiration}
+                    <TableCell align='left'>
+                      {hoveredRow !== row.token_name && row.expiration}
 
-          {/* <div
-            className="icons-overlay" // Class used for applying MUI styles on hover
-            sx={{
-              display: 'none', // Hidden by default
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'white',
-              boxShadow: 3, // MUI boxShadow for shadow effect
-              padding: 1,
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              gap: '5px',
-              '& span': {
-                display: 'inline-block',
-              },
-            }}
-          >
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-            <span>
-              <img src={Copy} alt="copy" />
-            </span>
-          </div> */}
-        </TableCell>
+                      {/* Show icons on hover */}
+                      {hoveredRow === row.token_name && (
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            backgroundColor: '#fff',
+                            padding: '10px',
+                            display: 'flex',
+                            gap: '6px',
+                            boxShadow: '0px 2px 5px rgba(0,0,0,0.2)',
+                            borderRadius: '8px',
+                            alignItems: 'center',
+                          }}
+                        >
+                          <FaCheck
+                            style={{ color: '#2F4F4F', cursor: 'pointer' }}
+                          />
+                          <FaCopy
+                            style={{ color: '#5A67D8', cursor: 'pointer' }}
+                            onClick={() => handleCopy(row.token_name)}
+                          />
+                          <FaEnvelope
+                            style={{ color: '#4A4A4A', cursor: 'pointer' }}
+                          />
+                          <FaEdit
+                            style={{ color: '#4A4A4A', cursor: 'pointer' }}
+                          />
+                          <FaBan
+                            style={{ color: '#B22222', cursor: 'pointer' }}
+                          />
+                          <FaTrash
+                            style={{ color: '#8B0000', cursor: 'pointer' }}
+                          />
+                        </div>
+                      )}
+                    </TableCell>
                   </TableRow>
                 );
               })}

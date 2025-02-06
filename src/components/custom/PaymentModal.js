@@ -171,10 +171,10 @@ export default function PaymentModal() {
                     <ArrowBack />
                   </span>
                   <span>
-                    <h3>Debit/Credit card</h3>
+                    <h3>{t("借记/信用卡")}</h3>
                   </span>
                 </div>
-                <h6>Card details</h6>
+                <h6>{t("卡片详情")}</h6>
               </div>
               <div className='modal-content'>
                 <div className='recharge-details'>
@@ -186,7 +186,7 @@ export default function PaymentModal() {
                   />
                 </div>
                 <div className='recharge-details'>
-                  <label>Card number</label>
+                  <label>{t("卡号")}</label>
                   <input
                     type='text'
                     value={payment}
@@ -202,7 +202,7 @@ export default function PaymentModal() {
                   }}
                 >
                   <div className='recharge-details'>
-                    <label>Exp</label>
+                    <label>{t("到期")}</label>
                     <input
                       type='text'
                       value={payment}
@@ -210,7 +210,7 @@ export default function PaymentModal() {
                     />
                   </div>
                   <div className='recharge-details'>
-                    <label>CVV</label>
+                    <label>{t("卡片背面的安全码")}</label>
                     <input
                       type='text'
                       value={payment}
@@ -237,7 +237,7 @@ export default function PaymentModal() {
                   autoFocus
                   className='redeem-button'
                 >
-                  Pay now
+                  {t("立即支付")}
                 </Button>
               </DialogActions>
             </div>
@@ -263,10 +263,10 @@ export default function PaymentModal() {
                     <ArrowBack />
                   </span>
                   <span>
-                    <h3>Wallet</h3>
+                    <h3>{t("钱包")}</h3>
                   </span>
                 </div>
-                <h6>Connect Wallet</h6>
+                <h6>{t("连接钱包")}</h6>
               </div>
 
               <div className='modal-content' style={{ width: '350px' }}>
@@ -283,9 +283,9 @@ export default function PaymentModal() {
                       <span>
                         <img src={Image05} alt='' />
                       </span>
-                      <span style={{ color: '#b2b3b7' }}>Trust Wallet</span>
+                      <span style={{ color: '#b2b3b7' }}>{t("Trust 钱包")}</span>
                     </div>
-                    <div style={{ color: '#2e91fe' }}>Connect</div>
+                    <div style={{ color: '#2e91fe' }}>{t("连接")}</div>
                   </div>
 
                   <div className='payment-option'>
@@ -293,9 +293,9 @@ export default function PaymentModal() {
                       <span>
                         <img src={Binance} alt='' />
                       </span>
-                      <span style={{ color: '#b2b3b7' }}>Binance Wallet</span>
+                      <span style={{ color: '#b2b3b7' }}>{t("Binance 钱包")}</span>
                     </div>
-                    <div style={{ color: '#2e91fe' }}>Connect</div>
+                    <div style={{ color: '#2e91fe' }}>{t("连接")}</div>
                   </div>
 
                   <div className='payment-option'>
@@ -303,9 +303,9 @@ export default function PaymentModal() {
                       <span>
                         <img src={Image04} alt='' />
                       </span>
-                      <span style={{ color: '#b2b3b7' }}>Exodus Wallet</span>
+                      <span style={{ color: '#b2b3b7' }}>{t("Exodus 钱包")}</span>
                     </div>
-                    <div style={{ color: '#2e91fe' }}>Connect</div>
+                    <div style={{ color: '#2e91fe' }}>{t("连接")}</div>
                   </div>
                 </div>
               </div>
@@ -321,7 +321,7 @@ export default function PaymentModal() {
                   autoFocus
                   className='redeem-button'
                 >
-                  Done
+                  {t("完成")}
                 </Button>
               </DialogActions>
             </div>
