@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { use, useContext, useEffect } from 'react';
 import { API, showError, showNotice, timestamp2string } from '../../helpers';
 import { StatusContext } from '../../context/Status';
 import { marked } from 'marked';
@@ -24,7 +24,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const Home = () => {
   const { t, i18n } = useTranslation();
   const [statusState] = useContext(StatusContext);
-
+  const [homePageContent, setHomePageContent] = useeState('');
   const displayNotice = async () => {
     const res = await API.get('/api/notice');
     const { success, message, data } = res.data;
