@@ -143,6 +143,9 @@
   font-size: 14px;
   cursor: pointer;
 }
+.border-add{
+  border: 1px solid #000000 !important;
+}
 
 .cancel-button {
   background: #f5f5f5;

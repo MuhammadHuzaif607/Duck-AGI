@@ -184,7 +184,9 @@ const HeaderBar = () => {
                   <img src={Wallet} alt='' />
                 </div>
               </div>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
               <h1 className='head-title'>{`${pathname.substring(1)}`}</h1>
+              </div>
             </>
           ) : (
             <div class='semi-navigation-header'>

@@ -304,8 +304,10 @@ const SiderBar = () => {
             setSelectedKeys([key.itemKey]);
           }}
         >
+
           {
             !isCollapsed && (
+              <>
               <Nav.Item style={{marginBottom: '10px'}}>
               <div style={{ backgroundColor: '##f5f6f8', padding: '5px', borderRadius: '6px'}}>
                   <span style={{ color: 'gray'}}>Chat shortcuts</span>
@@ -325,9 +327,10 @@ const SiderBar = () => {
                   </div>
                 </div>
               </Nav.Item>
+              </>
             )
           }
-          <Nav.Footer style={{marginBottom: '10px'}}>
+          <Nav.Footer style={{marginBottom: '10px' , marginTop: '10px'}}>
             <ul className='semi-navigation-list'>
               <Link style={{ textDecoration: 'none' }} to='settings'>
                 <li
@@ -353,6 +356,7 @@ const SiderBar = () => {
               </Link>
             </ul>
           </Nav.Footer>
+          
         </Nav>
       </div>
     </>
